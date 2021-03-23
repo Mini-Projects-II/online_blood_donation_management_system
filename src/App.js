@@ -1,10 +1,12 @@
 import './App.css';
 import './CSS/HomePage.css';
-import HomePage from "./Pages/HomePage.js";
+import './Pages/HomePage';
+import LoginAsHospital from './Pages/LoginAsHospital';
+
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+      <LoginAsHospital />
     </div>
   );
 }
