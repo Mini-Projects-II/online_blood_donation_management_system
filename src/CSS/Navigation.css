@@ -6,20 +6,44 @@
     text-align: center;
     list-style: none;
     width:100%;
+    margin-top:30px;
 
 }
 #nav ul li{
     display:inline-block;
-    padding: 40px;
+    margin-right: 90px;
     font-weight: bold;
 }
-#nav ul li a{
-    display: inline-block;
+ a{
+    display: block;
     text-decoration: none;
     color:black;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-#nav ul li a:hover #nav{
+#nav ul li a:hover{
     color: blueviolet;
-    background-color: burlywood;
 
+}
+#nav ul li #subm-1{
+    position: absolute;
+    left:400px;
+}
+#nav ul li #subm-2{
+    position: absolute;
+    left:540px;
+}
+#nav ul li ul li {
+    padding: 20px;
+    margin-right: 20px;
+    display: block;
+}
+li{
+    text-align: left;
+}
+ul li ul{
+    display: none;
+}
+ul li:hover ul{
+    display: block;
 }
