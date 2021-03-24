@@ -1,7 +1,10 @@
 import React from 'react'
+import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/LoginPage.css'
 export default function LoginAsDonor() {
     return (
+        <>
+        <div style = {backImage}></div>
         <div className="base-container">
             <div className="login-header">
                 <h2>Sign In</h2>
@@ -14,5 +17,6 @@ export default function LoginAsDonor() {
             </div>
             <input type="submit" value="Submit" id="submit" />
         </div>
+        </>
     )
 }

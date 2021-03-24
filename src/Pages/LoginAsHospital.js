@@ -1,5 +1,8 @@
 import React from 'react'
+import login_Page_1 from './../image/login_Page_1.jpg'
 import './../CSS/LoginPage.css'
+import backImage from './../Components/backgroundCSSForSeprateDiv.js';
+
 export default function LoginAsHospital() {
     const name = document.getElementById("name");
     const pass = document.getElementById("password");
@@ -21,7 +24,10 @@ export default function LoginAsHospital() {
     }
 
     return (
-        <div className="base-container">
+        <>
+        <div  className= "LoginAsHospital" style = {backImage}>
+            </div>
+            <div className="base-container">
             <div className="login-header">
                 <h2>Sign In</h2>
             </div>
@@ -36,6 +42,7 @@ export default function LoginAsHospital() {
             </div>
             <input type="submit" value="Submit" id="submit" />
             </form>
-        </div>
+            </div>
+        </>
     )
 }
