@@ -11,7 +11,7 @@ import SignupAsPatient from './Pages/SignupAsPatient';
 function App() {
   return (
     <div className="App">
-      <SignupAsPatient/>
+      <HomePage/>
     </div>
   );
 }
