@@ -4,43 +4,32 @@ import './../CSS/LoginPage.css'
 import backImage from './../Components/backgroundCSSForSeprateDiv.js';
 
 export default function LoginAsHospital() {
-    const name = document.getElementById("name");
-    const pass = document.getElementById("password");
 
     function checkInput(){
-        const nameValue = name.value.trim();
-        const passValue = pass.value.trim();
+        const nameValue = document.getElementById("name").value.trim();
+        const passValue = document.getElementById("password").value.trim();
+        const submit = document.getElementById("submit");
         if(nameValue === "")
-            showError(name,"Hospital Name can not be Blank");
+            alert("Please Enter a valid name");
         if(passValue === "")
-            showError(pass,"Invalid Password");
-    }
-
-    function showError(input,msg){
-        const loginContainer = input.parentNode;
-        loginContainer.className = 'login-container error';
-        const small = loginContainer.querySelector('small');
-        small.innerHTML = msg;
+            alert("Please Enter a valid password");
     }
 
     return (
         <>
-        <div  className= "LoginAsHospital" style = {backImage}>
-            </div>
+        <div  className= "LoginAsHospital" style = {backImage}></div>
             <div className="base-container">
             <div className="login-header">
                 <h2>Sign In</h2>
             </div>
-            <form onSubmit={checkInput}>
+            <form>
             <div className="login-container">
                 <label for="name">Hospital Name</label><br></br>
                 <input type="text" id="name" name="name" placeholder="Enter Hospital Name"/><br></br>
-                <small>Error Message</small><br></br>
                 <label for="password">Password</label><br></br>
                 <input type="text" id="password" name="password" placeholder="Enter Password"/><br></br>
-                <small>Error Message</small><br></br>
             </div>
-            <input type="submit" value="Submit" id="submit" />
+            <button type="submit" id="submit" onClick={checkInput}>Submit</button>
             </form>
             </div>
         </>
