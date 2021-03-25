@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner_1 from './../image/Banner_1.jpg';
 import Navigation from './../Components/Navigation';
+import Footer from './../Components/Footer.js';
 
 
 export default function HomePage() {
@@ -10,6 +11,8 @@ export default function HomePage() {
         <div className = "Banner">
             <img src = {Banner_1} alt = "Banner_1"></img>
         </div>
+        <Footer/>
+
         </>
     )
 }
