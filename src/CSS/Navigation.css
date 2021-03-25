@@ -14,6 +14,7 @@
     display:inline-block;
     margin-right: 90px;
     font-weight: bold;
+    padding-bottom: 20px ;
 }
  a{
     display: block;
@@ -23,7 +24,9 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #nav ul li a:hover{
-    color: blueviolet;
+    color: rgb(240, 57, 72);
+    transform: scale(1.2);
+    transition-duration: .4s;
 
 }
 #nav ul li #subm-1{
