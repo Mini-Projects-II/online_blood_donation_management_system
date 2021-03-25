@@ -9,17 +9,23 @@
     font-size: 20px;
     margin-bottom: 20px;
     display: block;
-    background-color: rgb(172, 171, 172);
+    background-color: rgb(5, 58, 233);
     border-radius: 50%;
     color: white;
     padding: 20px;
     
 
 }
+#soc i:hover{
+    background-color: rgb(64, 64, 226);
+    transform:scale(1.2);
+    transition: .4s;
+
+}
 .footer{
     width:100%;
     height: 300px;
-    background-color: black;
+    background-color: rgb(6, 101, 226);
     position: absolute;
     top:600px;
 
