@@ -5,11 +5,13 @@ import LoginAsHospital from './Pages/LoginAsHospital';
 import LoginAsPatient from './Pages/LoginAsPatient'
 import LoginAsDonor from './Pages/LoginAsDonor'
 import SignupAsDonor from './Pages/SignupAsDonor';
+import SignupAsHospital from './Pages/SignupAsHospital';
+import SignupAsPatient from './Pages/SignupAsPatient';
 
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+      <SignupAsPatient/>
     </div>
   );
 }

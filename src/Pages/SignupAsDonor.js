@@ -25,7 +25,7 @@ export default function SignupAsDonor() {
                             <option>Female</option>
                             <option>Male</option>
                             <option>Others</option>
-                    </select> 
+                    </select>&nbsp;&nbsp; 
                     <select name="bloodgroup" for="bloodgroup">
                             <option>A+</option>
                             <option>A-</option>

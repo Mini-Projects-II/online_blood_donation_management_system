@@ -37,8 +37,12 @@
 }
 
 select{
-    width: 49%;
+    width: 48%;
     height: 30px;
+}
+
+#district, #state{
+    width: 48%;
 }
 #submit{
     width: 50%;
