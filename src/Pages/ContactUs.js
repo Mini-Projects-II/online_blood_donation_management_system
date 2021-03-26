@@ -1,9 +1,11 @@
 import React from 'react'
+import Navigation from '../Components/Navigation'
 import './../CSS/ContactUs.css'
 
 export default function ContactUs() {
   return (
-    <div>
+    <div className = "con">
+      <Navigation/>
       <div className="header">
         <h1>Contact-Us</h1>
       </div>
