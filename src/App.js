@@ -7,11 +7,13 @@ import LoginAsDonor from './Pages/LoginAsDonor'
 import SignupAsDonor from './Pages/SignupAsDonor';
 import SignupAsHospital from './Pages/SignupAsHospital';
 import SignupAsPatient from './Pages/SignupAsPatient';
+import ContactUs from './Pages/ContactUs';
 
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+      {/* <HomePage/> */}
+      <ContactUs/>
     </div>
   );
 }
