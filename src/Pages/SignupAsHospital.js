@@ -1,8 +1,21 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
 
 export default function SignupAsHospital() {
+    const buttonRef = useRef();
+    function checkDetails(){
+        const hname = document.getElementById("hospital-name").value;
+        const ownersName = document.getElementById("owner-name").value;
+        const address = document.getElementById("address").value;
+        const contactNumber = document.getElementById("contact-number").value;
+        const district = document.getElementById("district").value;
+        const state= document.getElementById("state").value;
+        const password = document.getElementById("password").value;
+        if(hname === "" || ownersName === "" || address === "" || contactNumber === "" || district ==="" || state === "" || password === ""){
+            buttonRef.current.disabled = true;
+        }
+    }
     return (
         <>
           <div style = {backImage}></div>  
@@ -31,7 +44,7 @@ export default function SignupAsHospital() {
                     <label for="password">Password</label><br></br>
                     <input type="text" id="password" name="password" placeholder="Enter Password"/><br></br><br></br>
                 </div>
-                <button type="submit" id="submit">Submit</button>
+                <button type="submit" id="submit" ref={buttonRef} onClick={checkDetails}>Submit</button>
                 </form>
             </div>
         </>
