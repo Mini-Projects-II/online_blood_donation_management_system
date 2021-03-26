@@ -1,20 +1,18 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import login_Page_1 from './../image/login_Page_1.jpg'
 import './../CSS/LoginPage.css'
 import backImage from './../Components/backgroundCSSForSeprateDiv.js';
 
 export default function LoginAsHospital() {
-
+    const buttonRef = useRef();
     function checkInput(){
-        const nameValue = document.getElementById("name").value.trim();
-        const passValue = document.getElementById("password").value.trim();
-        const submit = document.getElementById("submit");
-        if(nameValue === "")
-            alert("Please Enter a valid name");
-        if(passValue === "")
-            alert("Please Enter a valid password");
+        const nameValue = document.getElementById("name").value;
+        const passValue = document.getElementById("password").value;
+        if(nameValue === "" || passValue === "")
+            buttonRef.current.disabled = true;
     }
 
+    
     return (
         <>
         <div  className= "LoginAsHospital" style = {backImage}></div>
@@ -29,7 +27,7 @@ export default function LoginAsHospital() {
                 <label for="password">Password</label><br></br>
                 <input type="text" id="password" name="password" placeholder="Enter Password"/><br></br>
             </div>
-            <button type="submit" id="submit" onClick={checkInput}>Submit</button>
+            <button type="submit" id="submit" ref={buttonRef} onClick={checkInput}>Submit</button>
             </form>
             </div>
         </>

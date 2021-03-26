@@ -1,7 +1,21 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
+
 export default function SignupAsDonor() {
+    const buttonRef = useRef();
+    function checkDetails(){
+        const pname = document.getElementById("name").value;
+        const parentsName = document.getElementById("parents-name").value;
+        const address = document.getElementById("address").value;
+        const mobileNumber = document.getElementById("mobile-number").value;
+        const gender = document.getElementById("gender").value;
+        const bloodGroup= document.getElementById("bloodgroup").value;
+        const password = document.getElementById("password").value;
+        if(pname === "" || parentsName === "" || address === "" || mobileNumber === "" || gender ==="" || bloodGroup === "" || password === ""){
+            buttonRef.current.disabled = true;
+        }
+    }
     return (
         <>
             <div style = {backImage}></div>
@@ -39,7 +53,7 @@ export default function SignupAsDonor() {
                     <label for="password">Password</label><br></br>
                     <input type="text" id="password" name="password" placeholder="Enter Password"/><br></br><br></br>
                 </div>
-                <button type="submit" id="submit">Submit</button>
+                <button type="submit" id="submit" ref={buttonRef} onClick={checkDetails}>Submit</button>
                 </form>
             </div>
         </>
