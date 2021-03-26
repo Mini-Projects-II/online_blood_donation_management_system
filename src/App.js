@@ -13,8 +13,7 @@ import AboutUs from './Pages/AboutUs';
 function App() {
   return (
     <div className="App">
-      {/* <HomePage/> */}
-      <AboutUs/>
+      <ContactUs/>
     </div>
   );
 }

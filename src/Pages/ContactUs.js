@@ -1,44 +1,27 @@
-import React, { useState } from "react";
+import React from 'react'
+import './../CSS/ContactUs.css'
 
-const ContactUs = () => {
-  const [status, setStatus] = useState("Submit");
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-    const { name, email, message } = e.target.elements;
-    let details = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
-    setStatus("Submit");
-    let result = await response.json();
-    alert(result.status);
-  };
+export default function ContactUs() {
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" required />
+    <div>
+      <div className="header">
+        <h1>Contact-Us</h1>
       </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" required />
+      <div className="main">
+      <form>
+      <label for="username">Username :</label>
+      <input type="text" id="username" name="username" placeholder="Name" required></input>
+      <label for="email">E-mail :</label>
+      <input type="email" id="email" name="email" placeholder="Enter Email" required></input>
+      <label for="mobno">Contact No:</label>
+      <input type="tel" id="mobno" name="mobno" placeholder="Enter Mobile" pattern="[6-9]{1}[0-9]{3}[0-9]{3}[0-9]{3}" required></input>
+      <label for="name">Organization name:</label>
+      <input type="text" id="name" name="name" placeholder="Organization Name"  required></input>
+      <label for="msg">Query Details</label>
+      <textarea type="text" id="msg" name="entry" rows="8" cols="50" placeholder="Write Your Message here..." required></textarea>
+      <button type="submit" id="button" name="submit-btn">Submit</button>          
+      </form>
       </div>
-      <div>
-        <label htmlFor="message">Message:</label>
-        <textarea id="message" required />
-      </div>
-      <button type="submit">{status}</button>
-    </form>
-  );
-};
-
-export default ContactUs;
+    </div>
+  )
+}
