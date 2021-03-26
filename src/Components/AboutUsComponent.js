@@ -1,26 +1,17 @@
-import React from 'react'
-
-export default function AboutUsComponent() {
-    return (
-        <div>
-            <div class="info" id="Ram">
-                <img src="../images/Ram.jpg" alt="image">
-                <div id = "info-div">
-                    <P>
-                        Name: Ramballabh Agrawal
-                    </P>
-                    <P>
-                        Email: ramballabh.agrawal_cs18@gla.ac.in
-                    </P>
-                    <p>
-                        Contact No: 6398470556
-                    </p>
-                    <p>
-                        Address: Goverdhan , Mathura
-                    </p>
-                </div>
-                
-            </div>
+import React from "react";
+import './../CSS/AboutUs.css'
+export default function AboutUsComponent(props) {
+  return (
+    <div>
+      <div class="info">
+        <img src={props.imageName}></img>
+          <div class="info-div">
+              <p>Name: {props.name}</p>
+              <p>Email: {props.email}</p>
+              <p>Contact No: {props.mob}</p>
+              <p>Address: {props.add}</p>
+          </div>
+      </div>
     </div>
-    )
+  );
 }

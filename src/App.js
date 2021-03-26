@@ -8,12 +8,13 @@ import SignupAsDonor from './Pages/SignupAsDonor';
 import SignupAsHospital from './Pages/SignupAsHospital';
 import SignupAsPatient from './Pages/SignupAsPatient';
 import ContactUs from './Pages/ContactUs';
+import AboutUs from './Pages/AboutUs';
 
 function App() {
   return (
     <div className="App">
       {/* <HomePage/> */}
-      <ContactUs/>
+      <AboutUs/>
     </div>
   );
 }
