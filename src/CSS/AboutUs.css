@@ -14,14 +14,16 @@ body{
     font-size: 40px;
 }
 h1{
+    padding-top: 100px;
     text-align:center;
     font-size: 65px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     color:rgb(120, 112, 226);
 
 }
 
 .info{
+    margin-top: 20px;
     width: 95%;
     text-align: center;
     justify-content:center;
@@ -34,6 +36,7 @@ h1{
 
 }
 .info>img{
+    margin-top: 20px;
     width:250px;
     height: 250px;
     border-radius: 50%;
