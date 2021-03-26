@@ -1,15 +1,10 @@
-body{
-    background-image:url("../images/back.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .header{
     width: 100%;
     height: 70px;
     display: flex;
     justify-content: center;
     justify-items: center;
-    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .header h1{
     text-align: center;
@@ -75,7 +70,6 @@ button:hover{
 .right{
     float: right;
     width: 50%;
-    margin-right:;
 }
 .right a{
     color: whitesmoke;
