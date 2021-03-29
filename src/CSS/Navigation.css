@@ -8,7 +8,12 @@
     width:100%;
     margin-top:30px;
     position: fixed;
+    background-image:linear-gradient(to right, white, rgb(159, 206, 247), white);
 
+}
+#nav ul{
+    background-image:linear-gradient(to right, white, rgb(159, 206, 247), white);
+    margin-top: 20px;
 }
 #nav ul li{
     display:inline-block;
@@ -31,15 +36,15 @@
 }
 #nav ul li #subm-1{
     position: absolute;
-    left:400px;
+    left:460px;
 }
 #nav ul li #subm-2{
     position: absolute;
-    left:540px;
+    left:600px;
 }
 #nav ul li ul li {
     padding: 20px;
-    margin-right: 20px;
+    margin-right: 0px;
     display: block;
 }
 li{

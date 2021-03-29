@@ -5,6 +5,7 @@ export default function Navigation() {
        <>
         <div id = "nav">
             <ul>
+                <li><a href = "#">Home</a></li>
                 <li> <a href = "#" >Login</a>
                     <ul id = "subm-1">
                         <li> <a href = "#">Login As Donor </a></li>
