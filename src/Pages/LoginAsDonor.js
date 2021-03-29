@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/LoginPage.css'
-
+import Navigation from './../Components/Navigation';
 export default function LoginAsDonor() {
     const buttonRef = useRef();
     function checkInput(){
@@ -13,6 +13,7 @@ export default function LoginAsDonor() {
 
     return (
         <>
+        <Navigation/>
         <div style = {backImage}></div>
         <div className="base-container">
             <div className="login-header">

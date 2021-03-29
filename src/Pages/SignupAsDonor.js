@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
-
+import Navigation from './../Components/Navigation';
 export default function SignupAsDonor() {
     const buttonRef = useRef();
     function checkDetails(){
@@ -18,6 +18,7 @@ export default function SignupAsDonor() {
     }
     return (
         <>
+        <Navigation/>
             <div style = {backImage}></div>
             <div className="base-container">
                 <div className="signup-header">
