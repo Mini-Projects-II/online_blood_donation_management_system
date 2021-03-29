@@ -13,7 +13,7 @@ export default function AboutUs() {
         <div>
             <Navigation/>
             <hr></hr>
-            <h1>About US</h1><hr></hr>
+            <h1 className = "AboutUsH">About US</h1><hr></hr>
             <AboutUsComponent imageName={ayush} name="Ayush Goyal" email="ayush.goyal_cs18@gla.ac.in" mob="8265881134" add="Goverdhan, Mathura"/>
             <AboutUsComponent imageName={gopal} name="Gopal Tiwari" email="gopal.tiwari_cs18@gla.ac.in" mob="7060455295" add="Goverdhan, Mathura"/>
             <AboutUsComponent imageName={naveen} name="Naveen Gupta" email="naveen.gupta_cs18@gla.ac.in" mob="6397363206" add="Chhata, Mathura"/>

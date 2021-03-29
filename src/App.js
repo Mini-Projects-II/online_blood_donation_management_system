@@ -9,6 +9,7 @@ import SignupAsHospital from './Pages/SignupAsHospital';
 import SignupAsPatient from './Pages/SignupAsPatient';
 import ContactUs from './Pages/ContactUs';
 import AboutUs from './Pages/AboutUs';
+import Error404 from './Components/Error404'
 import {Switch, Route} from 'react-router-dom';
 
 function App() {
