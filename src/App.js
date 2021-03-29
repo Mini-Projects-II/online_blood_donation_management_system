@@ -14,15 +14,18 @@ import {Switch, Route} from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <HomePage/>
-      <LoginAsDonor/>
-      <LoginAsHospital/>
-      <LoginAsPatient/>
-      <SignupAsDonor/>
-      <SignupAsHospital/>
-      <SignupAsPatient/>
-      <AboutUs/>
-      <ContactUs/>
+      <Switch>
+        <Route exact path='/' component = {HomePage}/>
+        <Route exact path='/login/donor' component = {LoginAsDonor}/>
+        <Route exact path='/login/patient' component = {LoginAsPatient}/>
+        <Route exact path='/login/hospital' component = {LoginAsHospital}/>
+        <Route exact path='/signup/donor' component = {SignupAsDonor}/>
+        <Route exact path='/signip/patient' component = {SignupAsPatient}/>
+        <Route exact path='/signip/hospital' component = {SignupAsHospital}/>
+        <Route exact path='/aboutus' component = {AboutUs}/>
+        <Route exact path='/contactus' component = {ContactUs}/>
+        <Route component = {Error404}/>
+      </Switch>
     </div>
   );
 }
