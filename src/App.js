@@ -21,8 +21,8 @@ function App() {
         <Route exact path='/login/patient' component = {LoginAsPatient}/>
         <Route exact path='/login/hospital' component = {LoginAsHospital}/>
         <Route exact path='/signup/donor' component = {SignupAsDonor}/>
-        <Route exact path='/signip/patient' component = {SignupAsPatient}/>
-        <Route exact path='/signip/hospital' component = {SignupAsHospital}/>
+        <Route exact path='/signup/patient' component = {SignupAsPatient}/>
+        <Route exact path='/signup/hospital' component = {SignupAsHospital}/>
         <Route exact path='/aboutus' component = {AboutUs}/>
         <Route exact path='/contactus' component = {ContactUs}/>
         <Route component = {Error404}/>
