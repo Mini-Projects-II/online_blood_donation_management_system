@@ -1,11 +1,12 @@
 *{
+    padding: 0%;
+    margin: 0%;
     box-sizing: border-box;
 }
 
 .base-container{
     margin:  100px auto;
     width: 350px;
-    height: 400px;
     background-color: #f7f7f7;
 }
 
