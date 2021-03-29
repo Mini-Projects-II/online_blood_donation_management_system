@@ -2,6 +2,7 @@
     background-color: rgb(97, 179, 247);
 }
 .header{
+    padding-top: 100px;
     width: 100%;
     justify-content: center;
     justify-items: center;
@@ -20,13 +21,13 @@
     align-items: center;
 
 }
-label{
+.main label{
     font-weight: bolder;
     font-size: 15px;
     margin:20px;
     display: block;
 }
-input{
+.main input{
     padding: 15px;
     margin: 5px 10px 0px 0;
     display: inline-block;
@@ -35,26 +36,26 @@ input{
     width: 60%;
     border-radius: 20px;
 }
-textarea{
+.main textarea{
 border-radius: 20px;
 width: 82%;
 padding: 10px;
 font-size: 20px;
 }
-textarea::placeholder{
+.main textarea::placeholder{
     font-size: 20px;
 }
-input:focus{
+.main input:focus{
     background-color:white;
     box-shadow: 0 0 3pt 2pt skyblue;
     outline: none;
 }
-form{
+.main form{
     width: 40%;
     float: left;
     margin-left: 40px;
 }
-button{
+#button{
     background-color:rgb(57, 87, 168);
     color: white;
     padding: 15px;
@@ -65,7 +66,7 @@ button{
     font-size: 2vw;
     margin-left: 20%;
 }
-button:hover{
+#button:hover{
     background-color:blanchedalmond;
     color: blue;
 }
