@@ -1,26 +1,28 @@
 import React from 'react'
+import {Link, NavLink} from 'react-router-dom';
 import './../CSS/Navigation.css';
 export default function Navigation() {
     return (
        <>
         <div id = "nav">
             <ul>
-                <li> <a href = "#" >Login</a>
+                <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/">Home</NavLink></li>
+                <li> <NavLink className= "navLink"  exact activeClassName= "active_class" to="/login/patient">Login</NavLink>
                     <ul id = "subm-1">
-                        <li> <a href = "#">Login As Donor </a></li>
-                        <li> <a href = "#">Login As Patient </a></li>
-                        <li> <a href = "#">Login As Hospital</a></li>
+                        <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/login/patient">Patient</NavLink></li>
+                        <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/login/donor">Donor</NavLink></li>
+                        <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/login/hospital">Hospital</NavLink></li>
                     </ul>
                 </li>
-                <li><a href = "#" >Signup</a>
+                <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/signup/patient">Signup</NavLink>
                     <ul id= "subm-2">
-                        <li> <a href = "#">Signup As Donor </a></li>
-                        <li> <a href = "#">Signup As Patient </a></li>
-                        <li> <a href = "#">Signup As Hospital</a></li>
-                    </ul>
+                        <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/signup/patient">Patient</NavLink></li>
+                        <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/signup/donor">Donor</NavLink></li>
+                        <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/signup/hospital">Hospital</NavLink></li>
+                    </ul>               
                 </li>
-                <li><a href = "#" >About Us</a></li>
-                <li><a href = "#" >Contact Us</a></li>
+                <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/aboutus">AboutUS</NavLink></li>
+                <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/contactus">ContactUS</NavLink></li>
             </ul>
         </div>
        </>

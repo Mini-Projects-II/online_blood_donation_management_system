@@ -2,6 +2,7 @@ import React, {useRef} from 'react'
 import login_Page_1 from './../image/login_Page_1.jpg'
 import './../CSS/LoginPage.css'
 import backImage from './../Components/backgroundCSSForSeprateDiv.js';
+import Navigation from './../Components/Navigation';
 
 export default function LoginAsHospital() {
     const buttonRef = useRef();
@@ -15,6 +16,7 @@ export default function LoginAsHospital() {
     
     return (
         <>
+        <Navigation/>
         <div  className= "LoginAsHospital" style = {backImage}></div>
             <div className="base-container">
             <div className="login-header">
