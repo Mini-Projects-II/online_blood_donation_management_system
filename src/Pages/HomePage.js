@@ -3,6 +3,7 @@ import Banner_2 from './../image/Banner_2.jpg';
 import Navigation from './../Components/Navigation';
 import Footer from './../Components/Footer.js';
 import BannerAnimation from '../Components/BannerAnimation';
+import LearnAboutDonation from '../Components/LearnAboutDonation';
 
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
         <div className = "Banner">
             <img src = {Banner_2} alt = "Banner_1"></img>
         </div>
+        <LearnAboutDonation />
         <Footer/>
 
         </>
