@@ -3,17 +3,18 @@ import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
 import Navigation from './../Components/Navigation';
 export default function SignupAsPatient() {
-    const buttonRef = useRef();
-    function checkDetails(){
-        const pname = document.getElementById("name").value;
-        const parentsName = document.getElementById("parents-name").value;
-        const address = document.getElementById("address").value;
-        const mobileNumber = document.getElementById("mobile-number").value;
-        const gender = document.getElementById("gender").value;
-        const bloodGroup= document.getElementById("bloodgroup").value;
-        const password = document.getElementById("password").value;
+    var btn = document.getElementById("submit");
+    const checkDetails=()=>{
+        var pname = document.getElementById("name").value;
+        var parentsName = document.getElementById("parents-name").value;
+        var address = document.getElementById("address").value;
+        var mobileNumber = document.getElementById("mobile-number").value;
+        var gender = document.getElementById("gender").value;
+        var bloodGroup= document.getElementById("bloodgroup").value;
+        var password = document.getElementById("password").value;
         if(pname === "" || parentsName === "" || address === "" || mobileNumber === "" || gender ==="" || bloodGroup === "" || password === ""){
-            buttonRef.current.disabled = true;
+            alert("No");
+            btn.disabled = true;
         }
     }
     return (
@@ -54,7 +55,7 @@ export default function SignupAsPatient() {
                     <label for="password">Password</label><br></br>
                     <input type="text" id="password" name="password" placeholder="Enter Password"/><br></br><br></br>
                 </div>
-                <button type="submit" id="submit" ref={buttonRef} onClick={checkDetails}>Submit</button>
+                <button type="submit" id="submit" onClick={checkDetails}>Submit</button>
                 </form>
             </div>
         </>
