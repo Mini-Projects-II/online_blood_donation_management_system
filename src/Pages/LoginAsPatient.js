@@ -1,16 +1,27 @@
-import React, {useRef} from 'react'
+import React, {useState} from 'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/LoginPage.css'
 import Navigation from './../Components/Navigation';
 export default function LoginAsPatient() {
-    const buttonRef = useRef();
-    function checkInput(){
-        const nameValue = document.getElementById("name").value;
-        const passValue = document.getElementById("password").value;
-        if(nameValue === "" || passValue === "")
-            buttonRef.current.disabled = true;
-    }
+    const [newRecord, setNewRecord] = useState({username:"", password:""});
+    const [record, setRecord] = useState([]);
+    const handleData = (e)=>{
+        e.preventDefault();
+        setRecord([...record, newRecord]);
+        if(!newRecord.username){
+            alert("Please enter the username");
+        }
+        else if( !newRecord.password){
+            alert("Please enter the Password");
+        }
+        setNewRecord({username:"", password:""});
 
+    }
+    const handleInput = (e)=>{
+        const name  = e.target.name;
+        const value = e.target.value;
+        setNewRecord({...newRecord, [name]:value})
+    }
     return (
         <>
         <Navigation/>
@@ -19,16 +30,23 @@ export default function LoginAsPatient() {
             <div className="login-header">
                 <h2>Sign In</h2>
             </div>
-            <form>
+            <form onSubmit = {handleData}>
             <div className="login-container">
-                <label for="name">Patient Name</label><br></br>
-                <input type="text" id="name" name="name" placeholder="Enter Patient Name"/><br></br><br></br>
-                <label for="password">Password</label><br></br>
-                <input type="text" id="password" name="password" placeholder="Enter Password"/><br></br><br></br>
+                <label htmlFor="username">Patient username</label><br></br>
+                <input type="text" id="username" name="username"
+                value = {newRecord.username}
+                onChange ={handleInput}
+                placeholder="Enter Donor username"/><br></br><br></br>
+                <label htmlFor="password">Password</label><br></br>
+                <input type="password" id="password" name="password"
+                value  ={newRecord.password}
+                onChange = {handleInput}
+                placeholder="Enter Password"/><br></br><br></br>
             </div>
-            <button type="submit" id="submit" ref={buttonRef} onClick={checkInput}>Submit</button>
+            <button type="submit" id="submit">Submit</button>
             </form>
         </div>
         </>
     )
+
 }
