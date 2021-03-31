@@ -35,9 +35,7 @@ export default function SignupAsHospital() {
                     <label for="address">Address</label><br></br>
                     <input type="text" id="address" name="address" placeholder="Enter Address"/><br></br><br></br>
                     
-                    <label for="district">District</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
                     <label for="state">State</label>
-                    <input type="text" id="district" name='district' placeholder="Enter District" />
                     <input type="text" id="state" name='state' placeholder="Enter State" /><br></br><br></br>
                     
                     <label for="contact-number">Contact Number</label><br></br>

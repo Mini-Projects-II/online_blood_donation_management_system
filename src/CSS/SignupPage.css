@@ -28,11 +28,13 @@
 }
 
 .signup-container input{
-    width: 100%;
+    width: 80%;
     padding: 10px;
     border-radius: 5px;
     outline: none;
+    font-family: 'Courier New', Courier, monospace;
     border: 2px solid #f0f0f0;
+    margin: 0 0 0 50px;
 }
 
 select{
@@ -44,12 +46,20 @@ select{
     width: 48%;
 }
 #submit{
-    width: 50%;
+    width: 30%;
     padding: 10px;
-    background-color: darkgray;
-    
+    background-color: rgb(243, 178, 178);
+    border-radius: 5px ;
     color: white;
     font-weight: bolder;
-    margin-left: 90px;
-    margin-bottom: 10px;
+   margin: 5px 150px;
+   outline: none;
+}
+.signup-container input:focus{
+    color: red;
+    box-shadow: 2px 2px 2px red;
+}
+#submit:hover{
+    background-color: #f0f0f0;
+    color:red;
 }
