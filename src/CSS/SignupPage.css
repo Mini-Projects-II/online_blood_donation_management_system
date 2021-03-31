@@ -44,6 +44,8 @@ select{
 
 #district, #state{
     width: 48%;
+    display: inline-block;
+    margin: 0;
 }
 #submit{
     width: 30%;
