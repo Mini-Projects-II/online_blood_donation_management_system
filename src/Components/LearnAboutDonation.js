@@ -5,7 +5,7 @@ import './../CSS/learn_about_donation.css'
 export default function LearnAboutDonation() {
     return (
         <div className="learn_about_donation">
-            <h2>LEARN ABOUT DONATION</h2>
+            <h1>LEARN ABOUT DONATION</h1>
             <div className="learn_donation">
                 <img src={learn_about_donation} alt="Learn about donation" />
             </div>
