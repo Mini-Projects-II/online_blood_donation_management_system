@@ -3,106 +3,50 @@ import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
 import Navigation from './../Components/Navigation';
 export default function SignupAsDonor() {
-    const [donor, setDonor] = useState({pname:"",parentsName:"",address:"",mobileNumber:"",gender:"",bloodGroup:"",password:""});
-    
+    const [donor, setDonor] = useState({pname:"",parentsName:"",address:"",mobileNumber:"",gender:"",bloodGroup:"",password:""});    
     const updateName=(event)=>{
         event.preventDefault();
         setDonor({...donor,pname:event.target.value});
-        if(donor.pname.trim() === ""){
-            document.getElementById("submit").style.backgroundColor = "grey";
-            document.getElementById("submit").disabled = true;
-        }
-        else{
-            document.getElementById("submit").style.backgroundColor = "red";
-            document.getElementById("submit").disabled = false;
-        }
     }
 
     const updateparentsName=(event)=>{
         setDonor({...donor,parentsName:event.target.value});
-        if(donor.parentsName === ""){
-            document.getElementById("submit").style.backgroundColor = "grey";
-            document.getElementById("submit").disabled = true;
-        }
-        else{
-            document.getElementById("submit").style.backgroundColor = "red";
-            document.getElementById("submit").disabled = false;
-        }
     }
 
     const updateaddress=(event)=>{
         setDonor({...donor,address:event.target.value});
-        if(donor.address.trim() === ""){
-            document.getElementById("submit").style.backgroundColor = "grey";
-            document.getElementById("submit").disabled = true;
-        }
-        else{
-            document.getElementById("submit").style.backgroundColor = "red";
-            document.getElementById("submit").disabled = false;
-        }
     }
 
     const updatemobileNumber=(event)=>{
         setDonor({...donor,mobileNumber:event.target.value});
-        if(donor.mobileNumber === ""){
-            document.getElementById("submit").style.backgroundColor = "grey";
-            document.getElementById("submit").disabled = true;
-        }
-        else{
-            document.getElementById("submit").style.backgroundColor = "red";
-            document.getElementById("submit").disabled = false;
-        }
     }
 
     const updategender=(event)=>{
         setDonor({...donor,gender:event.target.value});
-        if(donor.gender === ""){
-            document.getElementById("submit").style.backgroundColor = "grey";
-            document.getElementById("submit").disabled = true;
-        }
-        else{
-            document.getElementById("submit").style.backgroundColor = "red";
-            document.getElementById("submit").disabled = false;
-        }
     }
 
     const updatebloodGroup=(event)=>{
         setDonor({...donor,bloodGroup:event.target.value});
-        if(donor.bloodGroup === ""){
-            document.getElementById("submit").style.backgroundColor = "grey";
-            document.getElementById("submit").disabled = true;
-        }
-        else{
-            document.getElementById("submit").style.backgroundColor = "red";
-            document.getElementById("submit").disabled = false;
-        }
     }
 
     const updatepassword=(event)=>{
         setDonor({...donor,password:event.target.value});
-        if(donor.password === ""){
-            document.getElementById("submit").style.backgroundColor = "grey";
-            document.getElementById("submit").disabled = true;
-        }
-        else{
+        if(donor.pname !== "" && donor.parentsName !== "" && donor.address !== "" && donor.mobileNumber !== "" && donor.gender !== "" && donor.bloodGroup !== "" && donor.password !== "" && donor.goi_Id !== ""){
             document.getElementById("submit").style.backgroundColor = "red";
             document.getElementById("submit").disabled = false;
+        }
+        else{
+            document.getElementById("submit").style.backgroundColor = "darkgray";
+            document.getElementById("submit").disabled = true;
         }
     }
 
     const updategoi_Id=(event)=>{
         setDonor({...donor,goi_Id:event.target.value});
-        if(donor.goi_Id === ""){
-            document.getElementById("submit").style.backgroundColor = "grey";
-            document.getElementById("submit").disabled = true;
-        }
-        else{
-            document.getElementById("submit").style.backgroundColor = "red";
-            document.getElementById("submit").disabled = false;
-        }
     }
 
     function checkDetails(){
+
     }
     return (
         <>
@@ -153,7 +97,7 @@ export default function SignupAsDonor() {
                     <label for="password">Password</label><br></br>
                     <input type="text" id="password" name="password" placeholder="Enter Password" onChange={updatepassword}/><br></br><br></br>
                 </div>
-                <button type="submit" id="submit" onClick={checkDetails}>Submit</button>
+                <button type="submit" id="submit" disabled>Submit</button>
                 </form>
             </div>
         </>

@@ -46,7 +46,8 @@ select{
 #submit{
     width: 50%;
     padding: 10px;
-    background-color: darkred;
+    background-color: darkgray;
+    
     color: white;
     font-weight: bolder;
     margin-left: 90px;
