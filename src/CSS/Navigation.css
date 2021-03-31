@@ -8,6 +8,7 @@
     width:100%;
     position: fixed;
     top: 0;
+    z-index: 3;
     background-image:linear-gradient(to right, rgb(159, 206, 247), white, rgb(169, 202, 245));
 
 }
