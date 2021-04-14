@@ -1,6 +1,8 @@
 import './App.css';
 import './CSS/HomePage.css';
 import PatientDashBoard from './Pages/PatientDashBoard';
+import DonorDashBoard from './Pages/DonorDashBoard';
+import HospitalDashBoard from './Pages/HospitalDashBoard';
 import HomePage from './Pages/HomePage';
 import LoginAsHospital from './Pages/LoginAsHospital';
 import LoginAsPatient from './Pages/LoginAsPatient'
@@ -17,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <PatientDashBoard/>
+
       
       {/*<Switch>
         <Route exact path='/' component = {HomePage}/>

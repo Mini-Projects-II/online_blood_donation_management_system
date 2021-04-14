@@ -48,3 +48,12 @@
     font-size: 25px;
 
 }
+#d_nav p{
+    display: inline-block ;
+}
+#d_nav i{
+    display: inline-block;
+    color: aqua;
+    font-size: 20px;
+    padding: 10px;
+}
