@@ -4,7 +4,7 @@ import DashBoardNav from './../Components/DashBoardNav'
 export default function PatientDashBoard() {
     return (
             <>
-                <DashBoardNav val1="Donate Blood" val2 = "Donation Instructions" val3="History" val4="Logout"/>
+                <DashBoardNav  user= "Welcome Patient Name"  val1="Request Blood" val2 = "Request Instruction" val3="History" val4="Logout"/>
             </>
     )
 }
