@@ -1,5 +1,6 @@
 import './App.css';
 import './CSS/HomePage.css';
+import PatientDashBoard from './Pages/PatientDashBoard';
 import HomePage from './Pages/HomePage';
 import LoginAsHospital from './Pages/LoginAsHospital';
 import LoginAsPatient from './Pages/LoginAsPatient'
@@ -15,7 +16,9 @@ import {Switch, Route} from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <Switch>
+      <PatientDashBoard/>
+      
+      {/*<Switch>
         <Route exact path='/' component = {HomePage}/>
         <Route exact path='/login/donor' component = {LoginAsDonor}/>
         <Route exact path='/login/patient' component = {LoginAsPatient}/>
@@ -26,7 +29,7 @@ function App() {
         <Route exact path='/aboutus' component = {AboutUs}/>
         <Route exact path='/contactus' component = {ContactUs}/>
         <Route component = {Error404}/>
-      </Switch>
+      </Switch>*/}
     </div>
   );
 }

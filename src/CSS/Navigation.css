@@ -53,12 +53,12 @@
     margin-right: 0px;
     display: block;
 }
-li{
+#nav li{
     text-align: left;
 }
-ul li ul{
+#nav ul li ul{
     display: none;
 }
-ul li:hover ul{
+#nav ul li:hover ul{
     display: block;
 }
