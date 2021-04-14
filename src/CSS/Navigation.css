@@ -42,11 +42,11 @@
 }
 #nav ul li #subm-1{
     position: absolute;
-    left:500px;
+    left:33%;
 }
 #nav ul li #subm-2{
     position: absolute;
-    left:640px;
+    left:42%;
 }
 #nav ul li ul li {
     padding: 20px;
