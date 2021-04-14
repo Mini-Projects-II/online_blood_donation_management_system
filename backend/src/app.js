@@ -4,7 +4,9 @@ const app = express();
 const port = 8000;
 require('./db/conn')
 
-app.use(express.static())
+const static_path = path.join(__dirname,"../../public")
+app.use(express.static(static_path))
+
 app.get("/",(req,res)=>{
     res.send("hello");
 });
