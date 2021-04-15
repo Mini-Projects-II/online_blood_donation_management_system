@@ -18,10 +18,26 @@ app.use(
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
 
+app.get("/",(req,res)=>{
+  res.send("Home");
+})
 
-
-app.get("/donor",async (req,res)=>{
-    console.log(req.body.name);
+app.post("/donor",async (req,res)=>{
+    const {name,parents_name,address,mobile_number,gender,bloodgroup,password} = req.body;
+    try{
+      const donorexist = await Donorregister.findOne({mobile_number:mobile_number});
+      if(donorexist){
+        return res.status(422).json({error:"Email already exists"});
+      }
+      else{
+        const donor =new Donorregister({name,parents_name,address,mobile_number,gender,bloodgroup,password});
+        await donor.save();
+        res.status(201).json({message:"Registration successful"});
+      }
+    }
+    catch(e){
+      console.log("error");
+    }
 })
 
 app.listen(port, ()=>{

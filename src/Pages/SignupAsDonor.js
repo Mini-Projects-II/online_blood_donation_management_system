@@ -10,7 +10,6 @@ export default function SignupAsDonor() {
         const name = e.target.name;
         const value = e.target.value;
         setNewRecord({...newRecord, [name]:value});
-
     }
     const handleRecord = (e) =>{
         e.preventDefault();
@@ -30,12 +29,31 @@ export default function SignupAsDonor() {
         }
         else{
         setRecord([...record, newRecord]);
-        axios.post('http://localhost:8000/donor',newRecord)
-        .then(()=>{console.log("Donor Created")})
-        .catch((err)=>{console.log(err)});
         setNewRecord({name:"",parents_name:"",address:"",mobile_number:"",gender:"null",bloodgroup:"null",password:""});
         }
+    }
 
+    const PostData=async(e) =>{
+        e.preventDefault();
+        const {name,parents_name,address,mobile_number,gender,bloodgroup,password} = record;
+        const res = await fetch("/donor",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                name,parents_name,address,mobile_number,gender,bloodgroup,password
+            })
+        });
+        const data = await res.json();
+        if(data.status == "422"){
+            window.alert("Invalid  Registration");
+            console.log("Invalid  Registration");
+        }
+        else{
+            window.alert("Registration Successful");
+            console.log("Registration Successful");
+        }
     }
 
 
@@ -47,7 +65,7 @@ export default function SignupAsDonor() {
                 <div className="signup-header">
                     <h2>Sign Up</h2>
                 </div>
-                <form onSubmit = {handleRecord}>
+                <form method="POST" onSubmit = {handleRecord}>
                 <div className="signup-container">
                     <label htmlFor="name">Donor Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter Donor Name"  value = {newRecord.name} onChange={handleInput}/><br></br><br></br>
@@ -88,7 +106,7 @@ export default function SignupAsDonor() {
                     <label htmlFor="password">Password</label><br></br>
                     <input type="password" id="password" name="password" placeholder="Enter Password" value = {newRecord.password} onChange={handleInput}/><br></br><br></br>
                 </div>
-                <button type="submit" id="submit">Submit</button>
+                <button type="submit" id="submit" onClick={PostData}>Submit</button>
                 </form>
             </div>
         </>
