@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState} from  'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
 import Navigation from './../Components/Navigation';
+import axios from 'axios';
 export default function SignupAsDonor() {
     const [newRecord, setNewRecord] = useState({name:"",parents_name:"",address:"",mobile_number:"",gender:"null",bloodgroup:"null",password:""}); 
     const [record, setRecord] = useState([]);
@@ -29,15 +30,15 @@ export default function SignupAsDonor() {
         }
         else{
         setRecord([...record, newRecord]);
+        axios.post('http://localhost:8000/donor',newRecord)
+        .then(()=>{console.log("Donor Created")})
+        .catch((err)=>{console.log(err)});
         setNewRecord({name:"",parents_name:"",address:"",mobile_number:"",gender:"null",bloodgroup:"null",password:""});
         }
 
     }
 
-    
 
-  
-    
     return (
         <>
         <Navigation/>

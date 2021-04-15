@@ -1,15 +1,28 @@
 const express = require('express');
 const path = require("path");
+const logger = require('morgan');
+const cors = require('cors');
 const app = express();
 const port = 8000;
 require('./db/conn')
+const Donorregister = require("./models/donorRegister")
 
-const static_path = path.join(__dirname,"../../public")
-app.use(express.static(static_path))
+app.use(
+    cors({
+      origin: 'http://localhost:3000',
+      credentials: true,
+    })
+  );
 
-app.get("/",(req,res)=>{
-    res.send("hello");
-});
+  app.use(logger('dev'));
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: false }));
+
+
+
+app.get("/donor",async (req,res)=>{
+    console.log(req.body.name);
+})
 
 app.listen(port, ()=>{
     console.log("Listening to port 8000");
