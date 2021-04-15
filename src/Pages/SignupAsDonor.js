@@ -11,7 +11,7 @@ export default function SignupAsDonor() {
         const value = e.target.value;
         setNewRecord({...newRecord, [name]:value});
     }
-    const handleRecord = (e) =>{
+    const handleRecord = async(e) =>{
         e.preventDefault();
         if(!(newRecord.name && newRecord.address && newRecord.mobile_number && newRecord.parents_name && newRecord.password)){
             alert("Please Fill all Data in form");
@@ -30,11 +30,6 @@ export default function SignupAsDonor() {
         else{
         setRecord([...record, newRecord]);
         setNewRecord({name:"",parents_name:"",address:"",mobile_number:"",gender:"null",bloodgroup:"null",password:""});
-        }
-    }
-
-    const PostData=async(e) =>{
-        e.preventDefault();
         const {name,parents_name,address,mobile_number,gender,bloodgroup,password} = record;
         const res = await fetch("/donor",{
             method:"POST",
@@ -53,6 +48,7 @@ export default function SignupAsDonor() {
         else{
             window.alert("Registration Successful");
             console.log("Registration Successful");
+        }
         }
     }
 
@@ -106,7 +102,7 @@ export default function SignupAsDonor() {
                     <label htmlFor="password">Password</label><br></br>
                     <input type="password" id="password" name="password" placeholder="Enter Password" value = {newRecord.password} onChange={handleInput}/><br></br><br></br>
                 </div>
-                <button type="submit" id="submit" onClick={PostData}>Submit</button>
+                <button type="submit" id="submit">Submit</button>
                 </form>
             </div>
         </>
