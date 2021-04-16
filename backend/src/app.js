@@ -6,6 +6,7 @@ const app = express();
 var bodyParser = require('body-parser');
 const port = 8000;
 require('./db/conn')
+
 const Donorregister = require("./models/donorRegister");
 const Patientregister = require("./models/patientRegister");
 const Hospitalregister = require("./models/hospitalregister");
@@ -65,6 +66,69 @@ app.post("/hospital",async (req,res)=>{
   }
   catch(e){
     console.log("error");
+  }
+})
+
+app.post("/signinasdonor",async(req,res)=>{
+  try{
+    const {username,password} = req.body;
+    if(!username || !password){
+      return res.status(300).json({error:"Please fill the data"});
+    }
+
+    const signindonor = await Donorregister.findOne({name:username});
+    if(signindonor != null){
+    if(signindonor.password !== password){
+      return res.status(301).json({error:"Please entered valid details"});
+    }
+    if(signindonor.password === password){
+      return res.status(301).json({message:"welcome"});
+    }
+    }
+  }catch(err){
+    console.log(err);
+  }
+})
+
+app.post("/signinashospital",async(req,res)=>{
+  try{
+    const {username,password} = req.body;
+    if(!username || !password){
+      return res.status(300).json({error:"Please fill the data"});
+    }
+
+    const signinhospital = await Hospitalregister.findOne({hospital_name:username});
+    if(signinhospital != null){
+    if(signinhospital.password !== password){
+      return res.status(301).json({error:"Please entered valid details"});
+    }
+    if(signinhospital.password === password){
+      return res.status(301).json({message:"welcome"});
+    }
+    }
+  }catch(err){
+    console.log(err);
+  }
+})
+
+app.post("/signinaspatient",async(req,res)=>{
+  try{
+    const {username,password} = req.body;
+    if(!username || !password){
+      return res.status(300).json({error:"Please fill the data"});
+    }
+
+    const signinpatient = await Patientregister.findOne({name:username});
+    if(signinpatient != null){
+    if(signinpatient.password !== password){
+      return res.status(301).json({error:"Please entered valid details"});
+    }
+    if(signinpatient.password === password){
+      return res.status(301).json({message:"welcome"});
+    }
+    }
+  }catch(err){
+    console.log(err);
   }
 })
 
