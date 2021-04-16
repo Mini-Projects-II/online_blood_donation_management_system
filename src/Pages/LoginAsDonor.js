@@ -32,6 +32,15 @@ export default function LoginAsDonor() {
             console.log("Invalid  Registration");
         }
         else if(data.message == "welcome"){
+            const res1 = await fetch("/donordashdata",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    mobile_no
+                })
+            });
             history.push("./../dashboard/donor");
         }
 

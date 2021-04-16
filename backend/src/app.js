@@ -132,6 +132,16 @@ app.post("/signinaspatient",async(req,res)=>{
   }
 })
 
+app.post("/donordashdata",async(req,res)=>{
+  try{
+    const {mobile_no} = req.body;
+    const donordata = await Donorregister.findOne({mobile_number:mobile_no});
+    return res.json({message:donordata.name});
+  }catch(err){
+    console.log(err);
+  }
+})
+
 app.listen(port, ()=>{
     console.log("Listening to port 8000");
 });

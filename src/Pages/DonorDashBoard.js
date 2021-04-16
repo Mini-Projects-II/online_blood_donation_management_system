@@ -1,7 +1,25 @@
-import React from 'react'
+import React, {useState}from 'react'
 import DashBoardNav from './../Components/DashBoardNav'
 
 export default function DonorDashBoard() {
+    const [donordata, setdonordata] = useState();
+    const donordash = async()=>{
+        try{
+            const res = await fetch('/donordashdata',{
+                method: "GET",
+                headers:{
+                    Accept: "application/json",
+                    "Content-Type":"application/json"
+                },
+                credentials: "include"
+            })
+            const data = await res.json();
+            setdonordata(data);
+            console.log(donordata.name)
+        }catch(e){
+            console.log(e);
+        }
+    }
     return (
             <>
                 <DashBoardNav  icon = "fas fa-user" user="Welcome Donor Name" val1="Donate Blood" val2 = "Donation Instruction" val3="History" val4="Logout"/>
