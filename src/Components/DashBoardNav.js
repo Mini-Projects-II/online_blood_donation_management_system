@@ -11,7 +11,7 @@ export default function DashBoardNav(props) {
                 <li> <i class={props.icon}></i> <p className="u_name">{props.user}</p>  </li>
                 <li> <NavLink className= "dnavlink"  exact activeClassName= "d_active" to="/1">{props.val1}</NavLink></li>
                 <li><NavLink className= "dnavlink"  exact activeClassName= "d_active" to="/2">{props.val2}</NavLink>  </li>
-                <li><NavLink className= "dnavlink"  exact activeClassName= "d_active" to="/3">{props.val3}</NavLink></li>
+<li><NavLink className= "dnavlink"  exact activeClassName= "d_active" to="/3">{props.val3}</NavLink></li>
                 <li><NavLink className= "dnavlink"  exact activeClassName= "d_active" to="/4">{props.val4}</NavLink></li>
             </ul>
         </div>
