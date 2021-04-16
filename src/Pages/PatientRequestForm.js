@@ -4,8 +4,7 @@ import {useState} from  'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
 import DashBoardNav from './../Components/DashBoardNav';
-
-export default function DonarRequestFrom() {
+export default function PatientRequestForm() {
     const [newRecord, setNewRecord] = useState({name:"",per_date:"",per_time:"",mobile_number:"",gender:"null",bloodgroup:"null"}); 
     const [record, setRecord] = useState([]);
     const handleInput = (e) =>{
@@ -56,12 +55,12 @@ export default function DonarRequestFrom() {
             <div style = {backImage}></div>
             <div className="base-container">
                 <div className="signup-header">
-                    <h2>Donor request form</h2>
+                    <h2>Patient request form</h2>
                 </div>
                 <form method="POST" onSubmit = {handleRecord}>
                 <div className="signup-container">
-                    <label htmlFor="name">Donor Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter Donor Name"  value = {newRecord.name} onChange={handleInput}/><br></br><br></br>
+                    <label htmlFor="name">Patient Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Patient Name"  value = {newRecord.name} onChange={handleInput}/><br></br><br></br>
                     <label htmlFor="per_date">Select Preferd Date</label><br></br>
                     <input type="date" id="per_date" name="per_date" placeholder="Select preferd date" value = {newRecord.per_date} onChange={handleInput}/><br></br><br></br>
                     <label htmlFor="per_time">Current Residential's per_time</label><br></br>
@@ -102,4 +101,5 @@ export default function DonarRequestFrom() {
             </div>
         </>
     )
+
 }

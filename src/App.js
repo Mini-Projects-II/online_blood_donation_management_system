@@ -14,6 +14,8 @@ import ContactUs from './Pages/ContactUs';
 import AboutUs from './Pages/AboutUs';
 import Error404 from './Components/Error404'
 import {Switch, Route} from 'react-router-dom';
+import DonarRequestFrom from './Pages/DonarRequestFrom';
+import PatientRequestForm from './Pages/PatientRequestForm';
 
 function App() {
   return (
