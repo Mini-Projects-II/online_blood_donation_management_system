@@ -11,7 +11,7 @@ export default function SignupAsHospital() {
         setNewRecord({...newRecord, [name]:value});
 
     }
-    const handleRecord = (e) =>{
+    const handleRecord = async(e) =>{
         e.preventDefault();
         if(!(newRecord.hospital_name && newRecord.address && newRecord.contact_number && newRecord.state && newRecord.district && newRecord.owner_name &&  newRecord.password)){
             alert("Please Fill all Data in form");
@@ -27,8 +27,26 @@ export default function SignupAsHospital() {
         else{
         setRecord([...record, newRecord]);
         setNewRecord({hospital_name:"",owner_name:"",address:"",district:"",state:"", contact_number:"",password:""});
+        const {hospital_name,owner_name,address,district,state,contact_number,password} = newRecord;
+        const res = await fetch("/hospital",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                hospital_name,owner_name,address,district,state,contact_number,password
+            })
+        });
+        const data = await res.json();
+        if(data.status == 500 || !data){
+            window.alert("Invalid  Registration");
+            console.log("Invalid  Registration");
         }
-
+        else{
+            window.alert("Registration Successful");
+            console.log("Registration Successful");
+        }
+        }
     }
 
     return (

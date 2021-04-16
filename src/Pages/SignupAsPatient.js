@@ -12,7 +12,7 @@ export default function SignupAsPatient() {
         setNewRecord({...newRecord, [name]:value});
 
     }
-    const handleRecord = (e) =>{
+    const handleRecord = async(e) =>{
         e.preventDefault();
         if(!(newRecord.name && newRecord.address && newRecord.mobile_number && newRecord.parents_name && newRecord.password)){
             alert("Please Fill all Data in form");
@@ -31,14 +31,29 @@ export default function SignupAsPatient() {
         else{
         setRecord([...record, newRecord]);
         setNewRecord({name:"",parents_name:"",address:"",mobile_number:"",gender:"null",bloodgroup:"null",password:""});
+        const {name,parents_name,address,mobile_number,gender,bloodgroup,password} = newRecord;
+        const res = await fetch("/patient",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                name,parents_name,address,mobile_number,gender,bloodgroup,password
+            })
+        });
+        const data = await res.json();
+        if(data.status == 500 || !data){
+            window.alert("Invalid  Registration");
+            console.log("Invalid  Registration");
+        }
+        else{
+            window.alert("Registration Successful");
+            console.log("Registration Successful");
+        }
         }
 
     }
 
-    
-
-  
-    
     return (
         <>
         <Navigation/>

@@ -30,7 +30,7 @@ export default function SignupAsDonor() {
         else{
         setRecord([...record, newRecord]);
         setNewRecord({name:"",parents_name:"",address:"",mobile_number:"",gender:"null",bloodgroup:"null",password:""});
-        const {name,parents_name,address,mobile_number,gender,bloodgroup,password} = record;
+        const {name,parents_name,address,mobile_number,gender,bloodgroup,password} = newRecord;
         const res = await fetch("/donor",{
             method:"POST",
             headers:{
@@ -41,7 +41,7 @@ export default function SignupAsDonor() {
             })
         });
         const data = await res.json();
-        if(data.status == "422"){
+        if(data.status == 500 || !data){
             window.alert("Invalid  Registration");
             console.log("Invalid  Registration");
         }
