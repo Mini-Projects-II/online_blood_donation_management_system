@@ -5,20 +5,20 @@ import './../CSS/LoginPage.css'
 import Navigation from './../Components/Navigation';
 export default function LoginAsDonor() {
     const history = useHistory();
-    const [newRecord, setNewRecord] = useState({username:"", password:""});
+    const [newRecord, setNewRecord] = useState({mobile_no:"", password:""});
     const [record, setRecord] = useState([]);
     const handleData = async(e)=>{
         e.preventDefault();
         setRecord([...record, newRecord]);
-        setNewRecord({username:"", password:""});
-        const {username,password} = newRecord;
+        setNewRecord({mobile_no:"", password:""});
+        const {mobile_no,password} = newRecord;
         const res = await fetch("/signinasdonor",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
             },
             body:JSON.stringify({
-                username,password
+                mobile_no,password
             })
         });
         const data = await res.json();
@@ -51,11 +51,12 @@ export default function LoginAsDonor() {
             </div>
             <form onSubmit = {handleData}>
             <div className="login-container">
-                <label htmlFor="username">Donor username</label><br></br>
-                <input type="text" id="username" name="username"
-                value = {newRecord.username}
+                <label htmlFor="mobile_no">Mobile Number</label><br></br>
+                <input type="number" id="mobile_no" name="mobile_no"
+                maxLength = "10"
+                value = {newRecord.mobile_no}
                 onChange ={handleInput}
-                placeholder="Enter Donor username"/><br></br><br></br>
+                placeholder="Enter Donor Mobile Number"/><br></br><br></br>
                 <label htmlFor="password">Password</label><br></br>
                 <input type="password" id="password" name="password"
                 value  ={newRecord.password}

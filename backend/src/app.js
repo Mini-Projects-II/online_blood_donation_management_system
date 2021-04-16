@@ -71,12 +71,12 @@ app.post("/hospital",async (req,res)=>{
 
 app.post("/signinasdonor",async(req,res)=>{
   try{
-    const {username,password} = req.body;
-    if(!username || !password){
+    const {mobile_no,password} = req.body;
+    if(!mobile_no || !password){
       return res.status(300).json({error:"Please fill the data"});
     }
 
-    const signindonor = await Donorregister.findOne({name:username});
+    const signindonor = await Donorregister.findOne({mobile_number:mobile_no});
     if(signindonor != null){
     if(signindonor.password !== password){
       return res.status(301).json({error:"Please entered valid details"});
@@ -92,12 +92,12 @@ app.post("/signinasdonor",async(req,res)=>{
 
 app.post("/signinashospital",async(req,res)=>{
   try{
-    const {username,password} = req.body;
-    if(!username || !password){
+    const {mobile_no,password} = req.body;
+    if(!mobile_no || !password){
       return res.status(300).json({error:"Please fill the data"});
     }
 
-    const signinhospital = await Hospitalregister.findOne({hospital_name:username});
+    const signinhospital = await Hospitalregister.findOne({contact_number:mobile_no});
     if(signinhospital != null){
     if(signinhospital.password !== password){
       return res.status(301).json({error:"Please entered valid details"});
@@ -113,12 +113,12 @@ app.post("/signinashospital",async(req,res)=>{
 
 app.post("/signinaspatient",async(req,res)=>{
   try{
-    const {username,password} = req.body;
-    if(!username || !password){
+    const {mobile_no,password} = req.body;
+    if(!mobile_no || !password){
       return res.status(300).json({error:"Please fill the data"});
     }
 
-    const signinpatient = await Patientregister.findOne({name:username});
+    const signinpatient = await Patientregister.findOne({mobile_number:mobile_no});
     if(signinpatient != null){
     if(signinpatient.password !== password){
       return res.status(301).json({error:"Please entered valid details"});
