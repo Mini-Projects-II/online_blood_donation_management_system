@@ -3,7 +3,10 @@ const path = require("path");
 const logger = require('morgan');
 const cors = require('cors');
 const app = express();
+const jwt = require('jsonwebtoken');
+require("dotenv").config();
 var bodyParser = require('body-parser');
+const authenticate = require('./middleware/authenticate');
 const port = 8000;
 require('./db/conn')
 
@@ -82,6 +85,12 @@ app.post("/signinasdonor",async(req,res)=>{
       return res.status(301).json({error:"Please entered valid details"});
     }
     if(signindonor.password === password){
+      const token = await signindonor.generateAuthToken();
+      console.log(token);
+      res.cookie("jwtoken",token, {
+        expires: new Date(Date.now() + 25892000000),
+        httpOnly: true
+      });
       return res.status(301).json({message:"welcome"});
     }
     }
@@ -132,14 +141,8 @@ app.post("/signinaspatient",async(req,res)=>{
   }
 })
 
-app.post("/donordashdata",async(req,res)=>{
-  try{
-    const {mobile_no} = req.body;
-    const donordata = await Donorregister.findOne({mobile_number:mobile_no});
-    return res.json({message:donordata.name});
-  }catch(err){
-    console.log(err);
-  }
+app.get("/donordashdata", authenticate, async(req,res)=>{
+  res.send(req.rootDonor)
 })
 
 app.listen(port, ()=>{
