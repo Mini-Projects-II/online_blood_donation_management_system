@@ -1,4 +1,6 @@
 const mongoose = require("mongoose")
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 const patientSchema = new mongoose.Schema({
     name:{
@@ -29,8 +31,27 @@ const patientSchema = new mongoose.Schema({
     password:{
         type:String,
         required:true
-    }
+    },
+    tokens:[
+        {
+            token:{
+                type:String,
+                required:true
+            }
+        }
+    ]
 })
+
+patientSchema.methods.generateAuthToken = async function(){
+    try{
+        let token = jwt.sign({_id:this._id},process.env.SECRET_KEY).toString(); 
+        this.tokens = this.tokens.concat({token:token});
+        await this.save();
+        return token;
+    }catch(err){
+        console.log(err);
+    }
+}
 
 const Patientregister = new mongoose.model("Patientregister",patientSchema);
 

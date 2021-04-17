@@ -38,7 +38,7 @@ export default function SignupAsHospital() {
             })
         });
         const data = await res.json();
-        if(data.status == 500 || !data){
+        if(res.status == 500 || !data){
             window.alert("Invalid  Registration");
             console.log("Invalid  Registration");
         }

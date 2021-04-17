@@ -2,8 +2,10 @@ import React, {useState} from  'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
 import Navigation from './../Components/Navigation';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 export default function SignupAsDonor() {
+    const history = useHistory();
     const [newRecord, setNewRecord] = useState({name:"",parents_name:"",address:"",mobile_number:"",gender:"null",bloodgroup:"null",password:""}); 
     const [record, setRecord] = useState([]);
     const handleInput = (e) =>{
@@ -41,11 +43,12 @@ export default function SignupAsDonor() {
             })
         });
         const data = await res.json();
-        if(data.status == 500 || !data){
+        if(res.status == 500 || !data){
             window.alert("Invalid  Registration");
             console.log("Invalid  Registration");
         }
         else{
+            history.push('./../login/donor')
             window.alert("Registration Successful");
             console.log("Registration Successful");
         }

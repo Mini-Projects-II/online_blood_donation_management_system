@@ -28,8 +28,10 @@ app.post("/donor",async (req,res)=>{
         return res.status(500).json({error:"Phone number already exists"});
       }
       else{
+
         const donor = new Donorregister({name,parents_name,address,mobile_number,gender,bloodgroup,password});
         await donor.save();
+        return res.status(200).json({message:"sucessful"});
       }
     }
     catch(e){
@@ -48,6 +50,7 @@ app.post("/patient",async (req,res)=>{
     else{
       const patient = new Patientregister({name,parents_name,address,mobile_number,gender,bloodgroup,password});
       await patient.save();
+      return res.status(200).json({message:"sucessful"})
     }
   }
   catch(e){
@@ -74,6 +77,7 @@ app.post("/hospital",async (req,res)=>{
 
 app.post("/signinasdonor",async(req,res)=>{
   try{
+    let token;
     const {mobile_no,password} = req.body;
     if(!mobile_no || !password){
       return res.status(300).json({error:"Please fill the data"});
@@ -85,7 +89,8 @@ app.post("/signinasdonor",async(req,res)=>{
       return res.status(301).json({error:"Please entered valid details"});
     }
     if(signindonor.password === password){
-      const token = await signindonor.generateAuthToken();
+      token = await signindonor.generateAuthToken();
+      console.log(token);
       res.cookie("jwtoken",token, {
         expires: new Date(Date.now() + 25892000000),
         httpOnly: true
@@ -121,6 +126,7 @@ app.post("/signinashospital",async(req,res)=>{
 
 app.post("/signinaspatient",async(req,res)=>{
   try{
+    let token;
     const {mobile_no,password} = req.body;
     if(!mobile_no || !password){
       return res.status(300).json({error:"Please fill the data"});
@@ -132,12 +138,22 @@ app.post("/signinaspatient",async(req,res)=>{
       return res.status(301).json({error:"Please entered valid details"});
     }
     if(signinpatient.password === password){
+      token = await signinpatient.generateAuthToken();
+      console.log(token);
+      res.cookie("jwtoken",token, {
+        expires: new Date(Date.now() + 25892000000),
+        httpOnly: true
+      });
       return res.status(301).json({message:"welcome"});
     }
     }
   }catch(err){
     console.log(err);
   }
+})
+
+app.get("/donordashdata", authenticate, async(req,res)=>{
+  res.send(req.rootDonor)
 })
 
 app.get("/donordashdata", authenticate, async(req,res)=>{

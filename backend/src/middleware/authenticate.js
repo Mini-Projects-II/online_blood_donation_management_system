@@ -3,7 +3,7 @@ const Donor = require('../middleware/authenticate');
 const Donorregister = require("../models/donorRegister");
 const Authenticate = async(req,res,next) => {
     try{
-        const token = req.cookies.jwtoken;
+        const token = req.cookie.jwtoken;
         const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
         const rootDonor = await Donorregister.findOne({_id:verifyToken._id,"tokens.token":token})
         if(!rootDonor){
