@@ -1,8 +1,9 @@
-import React, {useState}from 'react'
+import React, {useEffect, useState}from 'react'
 import DashBoardNav from './../Components/DashBoardNav'
 
 export default function DonorDashBoard() {
     const [donordata, setdonordata] = useState();
+    
     const donordash = async()=>{
         try{
             const res = await fetch('/donordashdata',{
@@ -15,14 +16,17 @@ export default function DonorDashBoard() {
             })
             const data = await res.json();
             setdonordata(data);
-            console.log(donordata.name)
         }catch(e){
             console.log(e);
         }
     }
+    useEffect(() => {
+        donordash();
+    }, [])
+
     return (
             <>
-                <DashBoardNav  icon = "fas fa-user" user="Welcome Donor Name" val1="Donate Blood" val2 = "Donation Instruction" val3="History" val4="Logout"/>
+                <DashBoardNav  icon = "fas fa-user" user="Welcome Donor name" val1="Donate Blood" val2 = "Donation Instruction" val3="History" val4="Logout"/>
                 <h1 className ="p_hading">Your Requests</h1>
                 <div className="p_request">
                 <div className = "req">
