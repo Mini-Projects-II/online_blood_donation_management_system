@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 const Donor = require('../middleware/authenticate');
 const Donorregister = require("../models/donorRegister");
-const cookies = require('cookie-parser');
 const Authenticate = async(req,res,next) => {
     try{
         const token = req.cookies.jwtoken;
