@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 const authenticate = require('./middleware/authenticate');
 const port = 8000;
 require('./db/conn')
-
+var tk;
 const Donorregister = require("./models/donorRegister");
 const Patientregister = require("./models/patientRegister");
 const Hospitalregister = require("./models/hospitalregister");
@@ -91,6 +91,8 @@ app.post("/signinasdonor",async(req,res)=>{
     if(signindonor.password === password){
       token = await signindonor.generateAuthToken();
       console.log(token);
+      tk = token;
+      console.log(tk);
       res.cookie("jwtoken",token, {
         expires: new Date(Date.now() + 25892000000),
         httpOnly: true
@@ -129,7 +131,7 @@ app.post("/signinashospital",async(req,res)=>{
 
 app.post("/signinaspatient",async(req,res)=>{
   try{
-    let token;
+    var token;
     const {mobile_no,password} = req.body;
     if(!mobile_no || !password){
       return res.status(300).json({error:"Please fill the data"});
@@ -157,8 +159,24 @@ app.post("/signinaspatient",async(req,res)=>{
 }
 
 )
+const Authenticate = async(req,res,next) => {
+  try{
+      var token = tk;
+      //const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
+      const rootDonor = await Donorregister.findOne({"tokens.token":token})
+      if(!rootDonor){
+          throw new Error("donor not found")
+      }
+      req.token = token;
+      req.rootDonor = rootDonor;
+      req.donorID = rootDonor._id;
 
-app.get("/donordashdata",authenticate, async(req,res)=>{
+      next();
+  }catch(error){
+      console.log(error);
+  }
+}
+app.get("/donordashdata",Authenticate, async(req,res)=>{
     res.send(req.rootDonor);
 })
 
@@ -166,3 +184,5 @@ app.get("/donordashdata",authenticate, async(req,res)=>{
 app.listen(port, ()=>{
     console.log("Listening to port 8000");
 });
+
+module.exports.tk = tk;
