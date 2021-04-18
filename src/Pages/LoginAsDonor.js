@@ -4,6 +4,7 @@ import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/LoginPage.css'
 import Navigation from './../Components/Navigation';
 export default function LoginAsDonor() {
+    
     const history = useHistory();
     const [newRecord, setNewRecord] = useState({mobile_no:"", password:""});
     const [record, setRecord] = useState([]);
@@ -49,7 +50,7 @@ export default function LoginAsDonor() {
             <div className="login-header">
                 <h2>Sign In</h2>
             </div>
-            <form onSubmit = {handleData}>
+            <form  method="POST" onSubmit = {handleData}>
             <div className="login-container">
                 <label htmlFor="mobile_no">Mobile Number</label><br></br>
                 <input type="number" id="mobile_no" name="mobile_no"
