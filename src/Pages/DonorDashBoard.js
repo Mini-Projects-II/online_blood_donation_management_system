@@ -2,7 +2,7 @@ import React, {useEffect, useState}from 'react'
 import DashBoardNav from './../Components/DashBoardNav'
 
 export default function DonorDashBoard() {
-    const [donordata, setdonordata] = useState();
+    const [donordata, setdonordata] = useState({name:"",parents_name:"",address:"",mobile_number:"",gender:"null",bloodgroup:"null",password:""});
     
     const donordash = async()=>{
         try{
@@ -15,6 +15,7 @@ export default function DonorDashBoard() {
                 credentials: "include"
             })
             const data = await res.json();
+            console.log(data);
             setdonordata(data);
         }catch(e){
             console.log(e);
@@ -26,7 +27,7 @@ export default function DonorDashBoard() {
 
     return (
             <>
-                <DashBoardNav  icon = "fas fa-user" user="Welcome Donor name" val1="Donate Blood" val2 = "Donation Instruction" val3="History" val4="Logout"/>
+                <DashBoardNav  icon = "fas fa-user" user={donordata.name} val1="Donate Blood" val2 = "Donation Instruction" val3="History" val4="Logout"/>
                 <h1 className ="p_hading">Your Requests</h1>
                 <div className="p_request">
                 <div className = "req">

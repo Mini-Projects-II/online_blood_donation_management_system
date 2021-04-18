@@ -101,7 +101,10 @@ app.post("/signinasdonor",async(req,res)=>{
   }catch(err){
     console.log(err);
   }
-})
+  
+}
+
+)
 
 app.post("/signinashospital",async(req,res)=>{
   try{
@@ -150,15 +153,15 @@ app.post("/signinaspatient",async(req,res)=>{
   }catch(err){
     console.log(err);
   }
+
+}
+
+)
+
+app.get("/donordashdata",authenticate, async(req,res)=>{
+    res.send(req.rootDonor);
 })
 
-app.get("/donordashdata", authenticate, async(req,res)=>{
-  res.send(req.rootDonor)
-})
-
-app.get("/donordashdata", authenticate, async(req,res)=>{
-  res.send(req.rootDonor)
-})
 
 app.listen(port, ()=>{
     console.log("Listening to port 8000");
