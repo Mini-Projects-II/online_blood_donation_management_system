@@ -39,6 +39,21 @@ export default function DonorDashBoard() {
         donordash();
     }, [])
 
+    const cancelRequest = async() =>{
+        const {name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room} = formRecord
+        const res = await fetch("/cancel",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room
+            })
+        });
+        const data = await res.json();
+        alert(data.message);
+    }
+
     return (
             <>
                 <DashBoardNav  icon = "fas fa-user" user={donordata.name} val1="Donate Blood" val2 = "Donation Instruction" val3="History" val4="Logout"/>
@@ -55,7 +70,7 @@ export default function DonorDashBoard() {
                         </div>
                         <div className = "r_status">
                             <p className = "p_status"> Status: {formRecord.status}</p>
-                            <button className = "p_button">Cancel Request</button>
+                            <button className = "p_button" onClick={cancelRequest}>Cancel Request</button>
                         </div>
 
                     </div>
