@@ -176,10 +176,13 @@ app.post("/signinashospital",async(req,res)=>{
   }
 })
 
+var pmn;
+
 app.post("/signinaspatient",async(req,res)=>{
   try{
     var token;
     const {mobile_no,password} = req.body;
+    pmn = mobile_no;
     if(!mobile_no || !password){
       return res.status(300).json({error:"Please fill the data"});
     }
@@ -259,11 +262,33 @@ const AuthenticateDF= async(req,res,next) => {
   }
 }
 
+const AuthenticatePF= async(req,res,next) => {
+  try{
+      var mobile_number= pmn;
+      //const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
+      const rootPatientForm = await Patientreqmodel.findOne({mobile_number:mobile_number})
+      if(!rootPatientForm){
+          throw new Error("Patient not found")
+      }
+      req.rootPatientForm = rootPatientForm;
+      req.PatientFormID = rootPatientForm._id;
+
+      next();
+  }catch(error){
+      console.log(error);
+  }
+}
+
 app.get("/donordashdata",AuthenticateD, async(req,res)=>{
     res.send(req.rootDonor);
 })
+
+
 app.get("/donorreqformdata",AuthenticateDF, async(req,res)=>{
   res.send(req.rootDonorForm);
+})
+app.get("/patientreqformdata",AuthenticatePF, async(req,res)=>{
+  res.send(req.rootPatientForm);
 })
 app.get("/patientdashdata",AuthenticateP, async(req, res)=>{
   res.send(req.rootPatient);
