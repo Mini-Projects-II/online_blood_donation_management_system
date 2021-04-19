@@ -21,7 +21,8 @@ export default function LoginAsDonor() {
             body:JSON.stringify({
                 mobile_no,password
             })
-        });
+        }
+        );
         const data = await res.json();
         console.log(data)
         if(data.error == "Please fill the data"){
