@@ -1,4 +1,4 @@
-h1{
+/* h1{
     color: blue;
     text-align: center;
     margin-top: 20px;
@@ -7,8 +7,8 @@ h1{
 div{
     background-color: coral;
     margin-left: 20px;
-}
-
+} */
+/*use classes*/
 #list1{
     font-size: larger;
 }

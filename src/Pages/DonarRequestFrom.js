@@ -4,8 +4,10 @@ import {useState} from  'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
 import DashBoardNav from './../Components/DashBoardNav';
+import {useHistory} from 'react-router-dom';
 
 export default function DonarRequestFrom(props) {
+    const history = useHistory();
     const [newRecord, setNewRecord] = useState({name:"",per_date:"",per_time:"",mobile_number:"",gender:"null",bloodgroup:"null"}); 
     const [record, setRecord] = useState([]);
     const handleInput = (e) =>{
@@ -42,10 +44,12 @@ export default function DonarRequestFrom(props) {
         if(res.status == 500 || !data){
             window.alert("You already have a request");
             console.log("Invalid  Mobile NO");
+            history.push("./../dashboard/donor");
         }
         else if(res.status != 500 ){
             window.alert("Request added");
             console.log("Request added");
+            history.push("./../dashboard/donor");
         }
         }
     }

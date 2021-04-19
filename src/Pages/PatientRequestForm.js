@@ -4,7 +4,9 @@ import {useState} from  'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
 import DashBoardNav from './../Components/DashBoardNav';
+import {useHistory} from 'react-router-dom';
 export default function PatientRequestForm() {
+    const history = useHistory();
     const [newRecord, setNewRecord] = useState({name:"",per_date:"",per_time:"",mobile_number:"",gender:"null",bloodgroup:"null"}); 
     const [record, setRecord] = useState([]);
     const handleInput = (e) =>{
@@ -40,10 +42,12 @@ export default function PatientRequestForm() {
         const data = await res.json();
         if(res.status == 500 || !data){
             window.alert("You already have a request");
+            history.push("./../dashboard/patient");
             console.log("Invalid  Registration");
         }
         else if(res.status != 500){
             window.alert("Request added");
+            history.push("./../dashboard/patient");
             console.log("Registration Successful");
         }
         }
