@@ -22,7 +22,7 @@
     background-color: rgb(144, 230, 122);
     border-radius: 10px;
     position: relative;
-    height: 160px;
+    height: 260px;
 }
 .r_status{
     background-color: cornflowerblue;
@@ -46,19 +46,19 @@
 }
 
 .p_detail_3{
-    top: 50px;
+    top: 100px;
     left:35px;
 }
 .p_detail_4{
-    top: 50px;
+    top: 100px;
     left:700px;
 }
 .p_detail_5{
-    top: 100px;
+    top: 200px;
     left: 35px;
 }
 .p_detail_6{
-    top: 100px;
+    top: 200px;
     left:700px;
 }
 .p_status{

@@ -54,7 +54,7 @@ export default function DonorDashBoard() {
                         <p className = "p_detail_6">Room No: {formRecord.Room}</p>
                         </div>
                         <div className = "r_status">
-                            <p className = "p_status"> Status:Pending</p>
+                            <p className = "p_status"> Status: {formRecord.status}</p>
                             <button className = "p_button">Cancel Request</button>
                         </div>
 
