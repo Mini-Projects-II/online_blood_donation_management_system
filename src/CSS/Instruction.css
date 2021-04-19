@@ -14,12 +14,17 @@ div{
 }
 
 #content{
-    padding-top: 50px;
+   padding: 50px;
 }
 
 h1{
-    margin-top: 80px;
+    padding-top: 80px;
     text-align: center;
     color: aqua;
     font-size: 55px;
+}
+img{
+    margin-top: 80px;
+    height: 100%;
+    width: 100%;
 }

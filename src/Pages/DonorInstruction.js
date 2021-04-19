@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink} from 'react-router-dom';
+import Banner_3 from './../image/Banner_3.jpg';
 import './../CSS/Instruction.css';
 import DashBoardNav from './../Components/DashBoardNav';
 
@@ -9,6 +10,9 @@ export default function DonorInstruction() {
             <DashBoardNav  icon = "fas fa-user" val1="Donate Blood" val2 = "Donation Instruction" val3="History" val4="Logout"/>
             {/* <br/><br/><br/><br/><br/> */}
             <h1>Donor Instruction</h1>
+            <div className = "Banner">
+            <img src = {Banner_3} alt = "Banner_3" ></img>
+            </div>
             <div id="content">
                 <ol start="1" id="list1">
                     <li>First you need to fill the DONATE BLOOD FORM.</li>
