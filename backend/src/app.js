@@ -294,6 +294,19 @@ app.get("/patientdashdata",AuthenticateP, async(req, res)=>{
   res.send(req.rootPatient);
 })
 
+app.post("/cancel",async (req,res)=>{
+  const {name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room} = req.body;
+  try{
+    await Donorreqmodel.deleteOne({mobile_number:mobile_number1}, function(err){
+      if(err){
+        console.log(err)
+      }
+    });
+  }
+  catch(e){
+    console.log("error");
+  }
+})
 
 app.listen(port, ()=>{
     console.log("Listening to port 8000");
