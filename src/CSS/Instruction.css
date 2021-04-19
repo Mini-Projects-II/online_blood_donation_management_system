@@ -1,0 +1,19 @@
+h1{
+    color: blue;
+    text-align: center;
+    margin-top: 20px;
+}
+
+div{
+    background-color: coral;
+    margin-left: 20px;
+}
+
+#list1{
+    font-size: larger;
+}
+
+#content{
+    padding-top: 50px;
+}
+
