@@ -27,12 +27,19 @@ const patientreqSchema = new mongoose.Schema({
     },
   
     status:{
-        type:Boolean,
-        default:false
+        type:String,
+        default:"Pending"
 
+    },
+    HN:{
+        type:String,
+        default:"City Hospital"
+    },
+    HA:{
+        type:"String",
+        default:"Mathura, UttarPradesh"
     }
 
-    
 
 })
 const Patientreqmodel = new mongoose.model("Patientreqmodel",patientreqSchema);
