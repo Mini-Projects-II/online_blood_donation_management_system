@@ -14,7 +14,7 @@ export default function RequestInstructions() {
             <img src = {Banner_3} alt = "Banner_3" ></img>
             </div>
             <div id="content">
-                    <h2>Risks for a person receiving blood can be divided into several categories (Precautions) :</h2><br/>
+                    <h2>Risks for a person receiving blood can be divided into several categories (Precautions) :</h2><br/><br/>
                     <ol start="1" id="list1">
                     <li><b>Blood Type Matching : </b>Blood type should be compatible.</li><br/>
                     <li><b>Allergic and Other Reactions : </b>Delayed hemolytic reactions are usually mild and are caused by certain chemicals in the donor’s blood</li><br></br>
