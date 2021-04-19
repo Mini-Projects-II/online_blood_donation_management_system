@@ -5,6 +5,7 @@ import './../CSS/LoginPage.css'
 import backImage from './../Components/backgroundCSSForSeprateDiv.js';
 import Navigation from './../Components/Navigation';
 
+
 export default function LoginAsHospital() {
     const history = useHistory();
     const [newRecord, setNewRecord] = useState({mobile_no:"", password:""});
@@ -43,6 +44,16 @@ export default function LoginAsHospital() {
         const value = e.target.value;
         setNewRecord({...newRecord, [name]:value})
     }
+    const handleData1 = () =>{
+        if( newRecord.mobile_no == "9999999999" && newRecord.password == "9999999999"){
+            window.alert("Login Sucessfull");
+            history.push("./../dashboard/hospital");
+        }
+        else{
+            window.alert("Please Enter the valid password");
+        }
+
+    }
     return (
         <>
         <Navigation/>
@@ -51,7 +62,7 @@ export default function LoginAsHospital() {
             <div className="login-header">
                 <h2>Sign In</h2>
             </div>
-            <form onSubmit = {handleData}>
+            <form onSubmit = {handleData1}>
             <div className="login-container">
                 <label htmlFor="mobile_no">Mobile Number</label><br></br>
                 <input type="number" id="mobile_no" name="mobile_no"
