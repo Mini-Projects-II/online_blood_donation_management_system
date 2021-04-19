@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink} from 'react-router-dom';
 import Banner_3 from './../image/Banner_3.jpg';
 import './../CSS/Instruction.css';
-import DashBoardNav from '../Components/DashBoardNav';
+import DashBoardNav from '../Components/DashNavPat';
 
 export default function RequestInstructions() {
     return (
