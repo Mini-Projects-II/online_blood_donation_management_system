@@ -18,7 +18,7 @@ export default function RequestInstructions() {
                     <ol start="1" id="list1">
                     <li><b>Blood Type Matching : </b>Blood type should be compatible</li><br/>
                     <li><b>Allergic and Other Reactions : </b>Delayed hemolytic reactions are usually mild and are caused by certain chemicals in the donor’s blood</li><br></br>
-                    <li>Pulse rate- Between 50 and 100 without irregularities.</li><br></br>
+                    <li><b>Infection : </b>Infectious complications receive the most attention, especially since the HIV epidemic.</li><br></br>
                     <li>Hemoglobin level- A minimum of 12.5 g/dL.</li><br></br>
                     <li>Blood pressure- Diastolic: 50–100 mm Hg, Systolic: 100–180 mm Hg.</li><br></br>
                     <li>Body temperature- Should be normal, with an oral temperature not exceeding 37.5 °C.</li><br/>
