@@ -7,7 +7,7 @@ export default function PatientDashBoard() {
     const [Patientdata, setPatientdata] = useState({name:"",parents_name:"",address:"",mobile_number:"",gender:"null",bloodgroup:"null",password:""});
     const donordash = async()=>{
         try{
-            const res = await fetch('/donordashdata',{
+            const res = await fetch('/patientdashdata',{
                 method: "GET",
                 headers:{
                     Accept: "application/json",

@@ -198,7 +198,7 @@ app.get("/donordashdata",AuthenticateD, async(req,res)=>{
     res.send(req.rootDonor);
 })
 app.get("/patientdashdata",AuthenticateP, async(req, res)=>{
-  res.send(req.rootDonor);
+  res.send(req.rootPatient);
 })
 
 

@@ -5,7 +5,7 @@ import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
 import DashBoardNav from './../Components/DashBoardNav';
 
-export default function DonarRequestFrom() {
+export default function DonarRequestFrom(props) {
     const [newRecord, setNewRecord] = useState({name:"",per_date:"",per_time:"",mobile_number:"",gender:"null",bloodgroup:"null"}); 
     const [record, setRecord] = useState([]);
     const handleInput = (e) =>{
@@ -62,9 +62,9 @@ export default function DonarRequestFrom() {
                 <div className="signup-container">
                     <label htmlFor="name">Donor Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter Donor Name"  value = {newRecord.name} onChange={handleInput}/><br></br><br></br>
-                    <label htmlFor="per_date">Select Preferd Date</label><br></br>
+                    <label htmlFor="per_date">Enter Preferd Date</label><br></br>
                     <input type="date" id="per_date" name="per_date" placeholder="Select preferd date" value = {newRecord.per_date} onChange={handleInput}/><br></br><br></br>
-                    <label htmlFor="per_time">Current Residential's per_time</label><br></br>
+                    <label htmlFor="per_time">Enter Preferd Time</label><br></br>
                     <input type="time" id="per_time" name="per_time" placeholder="Enter your preferd time" value = {newRecord.per_time} onChange={handleInput}/><br></br><br></br>
                     <label htmlFor="mobile_number">Mobile Number</label><br></br>
                     <input type="number" maxLength = "10" id="mobile_number" name="mobile_number" placeholder="Enter Mobile Number" value = {newRecord.mobile_number} onChange={handleInput}/><br></br><br></br>
