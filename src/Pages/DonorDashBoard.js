@@ -30,6 +30,7 @@ export default function DonorDashBoard() {
             const data1 = await res1.json();
             console.log(data1);
             setFormRecord(data1);
+            
 
         }catch(e){
             console.log(e);
@@ -39,9 +40,10 @@ export default function DonorDashBoard() {
         donordash();
     }, [])
 
-    const cancelRequest = async() =>{
+    const cancelRequest =async(e)=>{
         const {name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room} = formRecord
-        const res = await fetch("/cancel",{
+        console.log("hgfcx");
+        const res =await fetch("/canceld",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -50,8 +52,12 @@ export default function DonorDashBoard() {
                 name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room
             })
         });
-        const data = await res.json();
-        alert(data.message);
+        if(res.status === 200){
+            window.location.reload(true);
+            window.alert("Request Deleted");
+        }
+        
+        
     }
 
     return (

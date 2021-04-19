@@ -294,14 +294,20 @@ app.get("/patientdashdata",AuthenticateP, async(req, res)=>{
   res.send(req.rootPatient);
 })
 
-app.post("/cancel",async (req,res)=>{
+app.post("/canceld",async (req,res)=>{
   const {name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room} = req.body;
   try{
-    await Donorreqmodel.deleteOne({mobile_number:mobile_number1}, function(err){
+    console.log("");
+    await Donorreqmodel.deleteOne({mobile_number:dmn}, function(err){
       if(err){
         console.log(err)
       }
+
     });
+    
+    return res.status(200).json({error:"Request Deleted please refresh the pasge"});
+    
+
   }
   catch(e){
     console.log("error");
