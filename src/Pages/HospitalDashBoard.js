@@ -1,10 +1,11 @@
 import React from 'react'
-import DashBoardNav from './../Components/DashBoardNav'
+import DashNavHos from './../Components/DashNavHos'
+
 
 export default function HospitalDashBoard() {
     return (
             <>
-                <DashBoardNav  icon = "fas fa-hospital" user="Hospital Name" val1="Blood Stock" val2 = "Donation Requests" val3="Blood Requests" val4="Logout"/>
+                <DashNavHos  icon = "fas fa-hospital" user="Hospital Name" val1="Blood Stock" val2 = "Donation Requests" val3="Blood Requests" val4="Logout"/>
                 <h1 className ="p_hading">Patient Requests</h1>
                 <div className="p_request">
                 <div className = "req">

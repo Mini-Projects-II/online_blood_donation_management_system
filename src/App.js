@@ -33,6 +33,9 @@ function App() {
         <Route exact path='/dashboard/donor' component={DonorDashBoard}/>
         <Route exact path='/dashboard/hospital' component={HospitalDashBoard}/>
         <Route exact path='/dashboard/patient' component={PatientDashBoard}/>
+        <Route exact path ='/dbp/form' component={PatientRequestForm}/>
+        <Route exact path='/dbd/form' component={DonarRequestFrom}/>
+
         <Route exact path='/aboutus' component = {AboutUs}/>
         <Route exact path='/contactus' component = {ContactUs}/>
         <Route component = {Error404}/>

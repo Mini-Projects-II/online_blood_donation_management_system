@@ -9,7 +9,8 @@ var bodyParser = require('body-parser');
 const authenticate = require('./middleware/authenticate');
 const port = 8000;
 require('./db/conn')
-var tk;
+var tkd;
+var tkp;
 const Donorregister = require("./models/donorRegister");
 const Patientregister = require("./models/patientRegister");
 const Hospitalregister = require("./models/hospitalregister");
@@ -91,8 +92,7 @@ app.post("/signinasdonor",async(req,res)=>{
     if(signindonor.password === password){
       token = await signindonor.generateAuthToken();
       console.log(token);
-      tk = token;
-      console.log(tk);
+      tkd = token;
       res.cookie("jwtoken",token, {
         expires: new Date(Date.now() + 25892000000),
         httpOnly: true
@@ -145,6 +145,7 @@ app.post("/signinaspatient",async(req,res)=>{
     if(signinpatient.password === password){
       token = await signinpatient.generateAuthToken();
       console.log(token);
+      tkp = token;
       res.cookie("jwtoken",token, {
         expires: new Date(Date.now() + 25892000000),
         httpOnly: true
@@ -159,9 +160,9 @@ app.post("/signinaspatient",async(req,res)=>{
 }
 
 )
-const Authenticate = async(req,res,next) => {
+const AuthenticateD = async(req,res,next) => {
   try{
-      var token = tk;
+      var token = tkd;
       //const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
       const rootDonor = await Donorregister.findOne({"tokens.token":token})
       if(!rootDonor){
@@ -176,8 +177,28 @@ const Authenticate = async(req,res,next) => {
       console.log(error);
   }
 }
-app.get("/donordashdata",Authenticate, async(req,res)=>{
+const AuthenticateP = async(req,res,next) => {
+  try{
+      var token = tkp;
+      //const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
+      const rootPatient = await Patientregister.findOne({"tokens.token":token})
+      if(!rootPatient){
+          throw new Error("Patient not found")
+      }
+      req.token = token;
+      req.rootPatient = rootPatient;
+      req.PatientID = rootPatient._id;
+
+      next();
+  }catch(error){
+      console.log(error);
+  }
+}
+app.get("/donordashdata",AuthenticateD, async(req,res)=>{
     res.send(req.rootDonor);
+})
+app.get("/patientdashdata",AuthenticateP, async(req, res)=>{
+  res.send(req.rootDonor);
 })
 
 
@@ -185,4 +206,3 @@ app.listen(port, ()=>{
     console.log("Listening to port 8000");
 });
 
-module.exports.tk = tk;
