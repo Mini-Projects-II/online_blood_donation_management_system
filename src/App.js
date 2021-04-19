@@ -17,6 +17,7 @@ import {Switch, Route} from 'react-router-dom';
 import DonarRequestFrom from './Pages/DonarRequestFrom';
 import PatientRequestForm from './Pages/PatientRequestForm';
 import DonorInstruction from './Pages/DonorInstruction';
+import RequestInstruction from './Pages/RequestInstructions';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route exact path='/dashboard/hospital' component={HospitalDashBoard}/>
         <Route exact path='/dashboard/patient' component={PatientDashBoard}/>
         <Route exact path ='/dbp/form' component={PatientRequestForm}/>
+        <Route exact path ='/dbp/inst' component={RequestInstruction}/>
         <Route exact path ='/dbd/inst' component={DonorInstruction}/>
         <Route exact path='/dbd/form' component={DonarRequestFrom}/>
         <Route exact path='/aboutus' component = {AboutUs}/>
