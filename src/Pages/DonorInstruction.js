@@ -16,7 +16,7 @@ export default function DonorInstruction() {
             <div id="content">
                 <ol start="1" id="list1">
                     <li>First you need to fill the DONATE BLOOD FORM.</li>
-                    <NavLink className= "dnavlink"  exact activeClassName= "d_active" to="/dbd/form">Donate Blood</NavLink><br></br>
+                    <NavLink className= "dnavlink"  exact activeClassName= "d_active" to="/dbd/form" className="link">Donate Blood</NavLink><br></br>
                     <li>After filling you can see your request on your Dashboard with two dynamic fields
                         <ol type = "i"><li>➢ Status</li><li>➢ Cancel Request</li></ol>
                     </li><br></br>
