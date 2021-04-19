@@ -14,11 +14,10 @@ export default function RequestInstructions() {
             <img src = {Banner_3} alt = "Banner_3" ></img>
             </div>
             <div id="content">
-                    <h2>There are several parameters that determine the eligibility of an individual to donate blood. Guidelines laid down by the Ministry of Health, 
-                        Government of India have to be followed by blood banks and organizations conducting blood donation camps.</h2><br/>
+                    <h2>Risks for a person receiving blood can be divided into several categories :</h2><br/>
                     <ol start="1" id="list1">
-                    <li>Overall health- The donor must be fit and healthy, and should not be suffering from transmittable diseases.</li><br/>
-                    <li>Age and weight- The donor must be 18–65 years old and should weigh a minimum of 50  kg.</li><br></br>
+                    <li><b>Blood Type Matching : </b>Blood type should be compatible</li><br/>
+                    <li><b>Allergic and Other Reactions : </b>Delayed hemolytic reactions are usually mild and are caused by certain chemicals in the donor’s blood</li><br></br>
                     <li>Pulse rate- Between 50 and 100 without irregularities.</li><br></br>
                     <li>Hemoglobin level- A minimum of 12.5 g/dL.</li><br></br>
                     <li>Blood pressure- Diastolic: 50–100 mm Hg, Systolic: 100–180 mm Hg.</li><br></br>
