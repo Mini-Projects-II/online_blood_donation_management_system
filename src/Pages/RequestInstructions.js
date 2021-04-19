@@ -14,16 +14,16 @@ export default function RequestInstructions() {
             <img src = {Banner_3} alt = "Banner_3" ></img>
             </div>
             <div id="content">
-                <ol start="1" id="list1">
-                    <li>First you need to fill the DONATE BLOOD FORM.</li>
-                    <NavLink className= "dnavlink"  exact activeClassName= "d_active" to="/dbp/form" className="link">Donate Blood</NavLink><br></br><br/>
-                    <li>After filling you can see your request on your Dashboard with two dynamic fields
-                        <ol type = "i"><li>➢ Status</li><li>➢ Cancel Request</li></ol>
-                    </li><br></br>
-                    <li>If you want to cancel your request then you can do it by clicking on the button.</li><br></br>
-                    <li>If hospital accept your request with your preferred time and date then your status gets update.</li><br></br>
-                    <li>Now you have all the details like Hospital name, Hospital address, Time, Date, Room number</li><br></br>
-                    <li>You can go there and donate you blood easily.</li>
+                    <h2>There are several parameters that determine the eligibility of an individual to donate blood. Guidelines laid down by the Ministry of Health, 
+                        Government of India have to be followed by blood banks and organizations conducting blood donation camps.</h2><br/>
+                    <ol start="1" id="list1">
+                    <li>Overall health- The donor must be fit and healthy, and should not be suffering from transmittable diseases.</li><br/>
+                    <li>Age and weight- The donor must be 18–65 years old and should weigh a minimum of 50  kg.</li><br></br>
+                    <li>Pulse rate- Between 50 and 100 without irregularities.</li><br></br>
+                    <li>Hemoglobin level- A minimum of 12.5 g/dL.</li><br></br>
+                    <li>Blood pressure- Diastolic: 50–100 mm Hg, Systolic: 100–180 mm Hg.</li><br></br>
+                    <li>Body temperature- Should be normal, with an oral temperature not exceeding 37.5 °C.</li><br/>
+                    <li>The time period between successive blood donations should be more than 3 months.</li>
                 </ol>
             </div>
         </div>
