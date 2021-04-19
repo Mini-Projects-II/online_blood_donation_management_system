@@ -37,6 +37,27 @@ export default function PatientDashBoard() {
     useEffect(() => {
         donordash();
     }, [])
+
+    const cancelRequest =async(e)=>{
+        const {name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room} = formRecord
+        console.log("hgfcx");
+        const res =await fetch("/cancelp",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room
+            })
+        });
+        if(res.status === 200){
+            window.location.reload(true);
+            window.alert("Request Deleted");
+        }
+        
+        
+    }
+
     
     return (
             <>
@@ -54,7 +75,7 @@ export default function PatientDashBoard() {
                         </div>
                         <div className = "r_status">
                             <p className = "p_status"> Status: {formRecord.status}</p>
-                            <button className = "p_button">Cancel Request</button>
+                            <button className = "p_button" onClick={cancelRequest}>Remove and add new Request</button>
                         </div>
 
                     </div>

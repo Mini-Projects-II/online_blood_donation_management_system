@@ -297,7 +297,7 @@ app.get("/patientdashdata",AuthenticateP, async(req, res)=>{
 app.post("/canceld",async (req,res)=>{
   const {name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room} = req.body;
   try{
-    console.log("");
+   
     await Donorreqmodel.deleteOne({mobile_number:dmn}, function(err){
       if(err){
         console.log(err)
@@ -313,6 +313,27 @@ app.post("/canceld",async (req,res)=>{
     console.log("error");
   }
 })
+
+app.post("/cancelp",async (req,res)=>{
+  const {name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room} = req.body;
+  try{
+  
+    await Patientreqmodel.deleteOne({mobile_number:pmn}, function(err){
+      if(err){
+        console.log(err)
+      }
+
+    });
+    
+    return res.status(200).json({error:"Request Deleted please refresh the pasge"});
+    
+
+  }
+  catch(e){
+    console.log("error");
+  }
+})
+
 
 app.listen(port, ()=>{
     console.log("Listening to port 8000");
