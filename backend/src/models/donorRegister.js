@@ -39,6 +39,7 @@ const donorSchema = new mongoose.Schema({
             }
         }
     ]
+    
 })
 donorSchema.methods.generateAuthToken = async function(){
     try{

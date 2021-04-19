@@ -14,6 +14,10 @@ var tkp;
 const Donorregister = require("./models/donorRegister");
 const Patientregister = require("./models/patientRegister");
 const Hospitalregister = require("./models/hospitalregister");
+const Donorreqmodel = require("./models/donorReqModel");
+const Patientreqmodel = require("./models/PatientRequestModel");
+
+
   app.use(express.json());
   app.use(express.urlencoded({extended:false}));
 
@@ -38,6 +42,46 @@ app.post("/donor",async (req,res)=>{
     catch(e){
       console.log("error");
     }
+})
+
+app.post("/donorformdata",async (req,res)=>{
+  const {name,per_date,per_time,mobile_number,gender,bloodgroup} = req.body;
+  const token = tkd;
+  
+  try{
+    const donorexist = await Donorreqmodel.findOne({mobile_number:mobile_number});
+    if(donorexist){
+      return res.status(500).json({error:"Request exist"});
+    }
+    else{
+    const donor = new Donorreqmodel({name,per_date,per_time,mobile_number,gender,bloodgroup,token})
+        await donor.save();
+        return res.status(200).json({message:"sucessful"});
+    }
+  }
+  catch(e){
+    console.log(e);
+  }
+})
+
+app.post("/patientformdata",async (req,res)=>{
+  const {name,per_date,per_time,mobile_number,gender,bloodgroup} = req.body;
+  const token = tkd;
+  
+  try{
+    const donorexist = await Patientreqmodel.findOne({mobile_number:mobile_number});
+    if(donorexist){
+      return res.status(500).json({error:"Request exist"});
+    }
+    else{
+    const donor = new Patientreqmodel({name,per_date,per_time,mobile_number,gender,bloodgroup,token})
+        await donor.save();
+        return res.status(200).json({message:"sucessful"});
+    }
+  }
+  catch(e){
+    console.log(e);
+  }
 })
 
 

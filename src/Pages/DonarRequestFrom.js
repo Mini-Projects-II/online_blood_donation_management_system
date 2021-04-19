@@ -28,8 +28,8 @@ export default function DonarRequestFrom(props) {
         else{
         setRecord([...record, newRecord]);
         setNewRecord({name:"",per_date:"",per_time:"",mobile_number:"",gender:"null",bloodgroup:"null"});
-        const {name,per_date,per_time,mobile_number,gender,bloodgroup,} = newRecord;
-        const res = await fetch("/donor",{
+        const {name,per_date,per_time,mobile_number,gender,bloodgroup} = newRecord;
+        const res = await fetch("/donorformdata",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -39,13 +39,13 @@ export default function DonarRequestFrom(props) {
             })
         });
         const data = await res.json();
-        if(data.status == 500 || !data){
-            window.alert("Invalid  Registration");
-            console.log("Invalid  Registration");
+        if(res.status == 500 || !data){
+            window.alert("You already have a request");
+            console.log("Invalid  Mobile NO");
         }
-        else{
-            window.alert("Registration Successful");
-            console.log("Registration Successful");
+        else if(res.status != 500 ){
+            window.alert("Request added");
+            console.log("Request added");
         }
         }
     }

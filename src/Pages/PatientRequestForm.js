@@ -28,7 +28,7 @@ export default function PatientRequestForm() {
         setRecord([...record, newRecord]);
         setNewRecord({name:"",per_date:"",per_time:"",mobile_number:"",gender:"null",bloodgroup:"null"});
         const {name,per_date,per_time,mobile_number,gender,bloodgroup,} = newRecord;
-        const res = await fetch("/donor",{
+        const res = await fetch("/patientformdata",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -38,12 +38,12 @@ export default function PatientRequestForm() {
             })
         });
         const data = await res.json();
-        if(data.status == 500 || !data){
-            window.alert("Invalid  Registration");
+        if(res.status == 500 || !data){
+            window.alert("You already have a request");
             console.log("Invalid  Registration");
         }
-        else{
-            window.alert("Registration Successful");
+        else if(res.status != 500){
+            window.alert("Request added");
             console.log("Registration Successful");
         }
         }
