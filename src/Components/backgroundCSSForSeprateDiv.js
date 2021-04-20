@@ -1,6 +1,6 @@
-import login_Page_1 from './../image/login_Page_1.jpg'
+import Banner_3 from './../image/Banner_3.jpg'
 const backImage = {
-    backgroundImage : `url(${login_Page_1})`,
+    backgroundImage : `url(${Banner_3})`,
     width: "100%",
     height: "100%",
     position:"absolute",
