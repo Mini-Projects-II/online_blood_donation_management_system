@@ -11,6 +11,8 @@ div{
 /*use classes*/
 #list1{
     font-size: larger;
+    color:green;
+    font-weight: bold;
 }
 
 #content{
