@@ -17,6 +17,8 @@ import DonarRequestFrom from './Pages/DonarRequestFrom';
 import PatientRequestForm from './Pages/PatientRequestForm';
 import DonorInstruction from './Pages/DonorInstruction';
 import RequestInstruction from './Pages/RequestInstructions';
+import PatientRequests from './Pages/PatientRequests';
+import DonorRequests from './Pages/DonorRequests';
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
         <Route exact path='/dbd/form' component={DonarRequestFrom}/>
         <Route exact path='/aboutus' component = {AboutUs}/>
         <Route exact path='/contactus' component = {ContactUs}/>
+        <Route exact path='/hosp/drequests' component={DonorRequests}/>
+        <Route exact path='/hosp/prequests' component={PatientRequests}/>
         <Route component = {Error404}/>
       </Switch>
     </div>
