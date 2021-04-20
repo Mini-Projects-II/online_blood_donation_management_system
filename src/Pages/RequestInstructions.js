@@ -9,12 +9,12 @@ export default function RequestInstructions() {
         <div>
             <DashBoardNav  icon = "fas fa-user" val1="Donate Blood" val2 = "Request Instruction" val3="History" val4="Logout"/>
             {/* <br/><br/><br/><br/><br/> */}
-            <h1>Request Instruction</h1><hr></hr>
+            <h1 className="mainHeading">Request Instruction</h1><hr></hr>
             <div className = "Banner">
-            <img src = {Banner_3} alt = "Banner_3" ></img>
+            <img src = {Banner_3} alt = "Banner_3" id="img"></img>
             </div>
             <div id="content">
-                    <h2>Risks for a person receiving blood can be divided into several categories (Precautions) :</h2><br/><br/>
+                    <h2 className="heading">Risks for a person receiving blood can be divided into several categories (Precautions) :</h2><br/><br/>
                     <ol start="1" id="list1">
                     <li><b>Blood Type Matching : </b>Blood type should be compatible.</li><br/>
                     <li><b>Allergic and Other Reactions : </b>Delayed hemolytic reactions are usually mild and are caused by certain chemicals in the donor’s blood</li><br></br>

@@ -8,12 +8,12 @@ export default function DonorInstruction() {
     return (
         <div>
             <DashBoardNav  icon = "fas fa-user" val1="Donate Blood" val2 = "Donation Instruction" val3="History" val4="Logout"/>
-            <h1>Donor Instruction</h1><hr></hr>
+            <h1 className="mainHeading">Donor Instruction</h1><hr></hr>
             <div className = "Banner">
-            <img src = {Banner_3} alt = "Banner_3" ></img>
+            <img src = {Banner_3} alt = "Banner_3" id="img"></img>
             </div>
             <div id="content">
-                    <h2>There are several parameters that determine the eligibility of an individual to donate blood. Guidelines laid down by the Ministry of Health, 
+                    <h2 className="heading">There are several parameters that determine the eligibility of an individual to donate blood. Guidelines laid down by the Ministry of Health, 
                         Government of India have to be followed by blood banks and organizations conducting blood donation camps.</h2><br/>
                     <ol start="1" id="list1">
                     <li>Overall health- The donor must be fit and healthy, and should not be suffering from transmittable diseases.</li><br/>
