@@ -335,10 +335,11 @@ app.post("/cancelp",async (req,res)=>{
 })
 
 app.get("/patientrequests",async(req,res)=>{
-  const requests = Patientreqmodel.find()
-  .then((doc)=>{req.doc = doc;console.log(doc)})
+  const requests = await Patientreqmodel.find()
+  .then((doc)=>{req.doc = doc;})
   .catch((error)=>console.log(error))
-  res.send(req.doc)
+  //console.log(req.doc);
+  res.send(req.doc);
 })
 
 
