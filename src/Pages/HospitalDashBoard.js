@@ -38,8 +38,9 @@ export default function HospitalDashBoard() {
             <p className = "p_detail_6">Patient Blood Group: {e.bloodgroup}</p>
         </div>
         <div className = "r_status">
-                <p className = "p_status"> Status:Pending</p>
+                <p className = "p_status"> Status: {e.status}</p>
                 <button className = "p_button">Cancel Request</button>
+                <button className = "p_button1">Accept Request</button>
         </div>
     </div>
 
