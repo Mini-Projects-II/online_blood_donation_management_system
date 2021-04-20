@@ -7,9 +7,8 @@ import DashBoardNav from '../Components/DashNavPat';
 export default function RequestInstructions() {
     return (
         <div>
-            <DashBoardNav  icon = "fas fa-user" val1="Donate Blood" val2 = "Request Instruction" val3="History" val4="Logout"/>
-            {/* <br/><br/><br/><br/><br/> */}
-            <h1 className="mainHeading">Request Instruction</h1><hr></hr>
+            <DashBoardNav  icon = "fas fa-user" val1="Donate Blood" val2 = "Request Instruction" val3="History" val4="Logout"/><br/>
+            <h1 className="mainHeading">Request Instruction</h1><br/><br/><hr></hr>
             <div className = "Banner">
             <img src = {Banner_3} alt = "Banner_3" id="img"></img>
             </div>
