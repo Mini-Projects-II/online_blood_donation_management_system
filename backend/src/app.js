@@ -338,7 +338,13 @@ app.get("/patientrequests",async(req,res)=>{
   const requests = await Patientreqmodel.find()
   .then((doc)=>{req.doc = doc;})
   .catch((error)=>console.log(error))
-  //console.log(req.doc);
+  res.send(req.doc);
+})
+
+app.get("/donorrequests",async(req,res)=>{
+  const requests = await Donorreqmodel.find()
+  .then((doc)=>{req.doc = doc;})
+  .catch((error)=>console.log(error))
   res.send(req.doc);
 })
 
