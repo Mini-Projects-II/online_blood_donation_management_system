@@ -8,7 +8,6 @@ import LoginAsHospital from './Pages/LoginAsHospital';
 import LoginAsPatient from './Pages/LoginAsPatient'
 import LoginAsDonor from './Pages/LoginAsDonor'
 import SignupAsDonor from './Pages/SignupAsDonor';
-import SignupAsHospital from './Pages/SignupAsHospital';
 import SignupAsPatient from './Pages/SignupAsPatient';
 import ContactUs from './Pages/ContactUs';
 import AboutUs from './Pages/AboutUs';
@@ -30,7 +29,6 @@ function App() {
         <Route exact path='/login/hospital' component = {LoginAsHospital}/>
         <Route exact path='/signup/donor' component = {SignupAsDonor}/>
         <Route exact path='/signup/patient' component = {SignupAsPatient}/>
-        <Route exact path='/signup/hospital' component = {SignupAsHospital}/>
         <Route exact path='/dashboard/donor' component={DonorDashBoard}/>
         <Route exact path='/dashboard/hospital' component={HospitalDashBoard}/>
         <Route exact path='/dashboard/patient' component={PatientDashBoard}/>

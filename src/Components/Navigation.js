@@ -18,7 +18,6 @@ export default function Navigation() {
                     <ul id= "subm-2">
                         <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/signup/patient">Patient</NavLink></li>
                         <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/signup/donor">Donor</NavLink></li>
-                        <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/signup/hospital">Hospital</NavLink></li>
                     </ul>               
                 </li>
                 <li><NavLink className= "navLink"  exact activeClassName= "active_class" to="/aboutus">AboutUS</NavLink></li>
