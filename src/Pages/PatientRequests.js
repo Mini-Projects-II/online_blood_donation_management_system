@@ -1,4 +1,6 @@
 import React,{useEffect} from 'react'
+import DashNavHos from './../Components/DashNavHos'
+import {useState} from 'react';
 
 export default function PatientRequests() {
     const[parray, setParray] = useState([{name:"",per_date:"null",per_time:"null",mobile_number:"",gender:"null",bloodgroup:"null",status:"",HN:"null",HA:"null",Room:"null"}]);
