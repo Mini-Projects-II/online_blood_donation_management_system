@@ -82,13 +82,32 @@
     position:absolute;
     font-weight: bold;
     top: 8px;
+    left:900px;
+
+}
+
+.p_button1{
+    background-color: rgb(34, 250, 6);
+    color: white;
+    border-radius:5px ;
+    padding: 10px;
+    border: none;
+    outline: none;
+    position:absolute;
+    font-weight: bold;
+    top: 8px;
     left:700px;
 
 }
 
+
 .p_button:hover{
     color: rgb(159, 185, 185);
     background-color: rgb(136, 30, 36);
+}
+.p_button1:hover{
+    color: rgb(159, 185, 185);
+    background-color: rgb(21, 141, 17);
 }
 
 

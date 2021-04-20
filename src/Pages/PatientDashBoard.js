@@ -61,7 +61,7 @@ export default function PatientDashBoard() {
     
     return (
             <>
-                <DashNavPat icon = "fas fa-user" user= {Patientdata.name}  val1="Request Blood" val2 = "Request Instruction" val3="History" val4="Logout"/>
+                <DashNavPat icon = "fas fa-user" user= {Patientdata.name}  val1="Home" val2 = "Request" val3="Instructions" val4="Logout"/>
                 <h1 className ="p_hading"> Your Requests</h1>
                 <div className="p_request">
                 <div className = "req">

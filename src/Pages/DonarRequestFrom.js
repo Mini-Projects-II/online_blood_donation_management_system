@@ -57,6 +57,7 @@ export default function DonarRequestFrom(props) {
 
     return (
         <>
+        <DashBoardNav  icon = "fas fa-user" val1="Home" val2 = "Request" val3="instruction" val4="Logout"/>
             <div style = {backImage}></div>
             <div className="base-container">
                 <div className="signup-header">

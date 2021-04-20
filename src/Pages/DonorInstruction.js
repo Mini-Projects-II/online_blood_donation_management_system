@@ -7,7 +7,7 @@ import DashBoardNav from './../Components/DashBoardNav';
 export default function DonorInstruction() {
     return (
         <div>
-            <DashBoardNav  icon = "fas fa-user" val1="Donate Blood" val2 = "Donation Instruction" val3="History" val4="Logout"/>
+            <DashBoardNav  icon = "fas fa-user" val1="Home" val2 = "Request" val3="instruction" val4="Logout"/>
             <h1 className="mainHeading">Donor Instruction</h1><hr></hr>
             <div className = "Banner">
             <img src = {Banner_3} alt = "Banner_3" id="img"></img>

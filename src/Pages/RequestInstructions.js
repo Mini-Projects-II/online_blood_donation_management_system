@@ -2,12 +2,13 @@ import React from 'react'
 import { NavLink} from 'react-router-dom';
 import Banner_3 from './../image/Banner_3.jpg';
 import './../CSS/Instruction.css';
-import DashBoardNav from '../Components/DashNavPat';
+import DashNavPat from '../Components/DashNavPat';
+
 
 export default function RequestInstructions() {
     return (
         <div>
-            <DashBoardNav  icon = "fas fa-user" val1="Donate Blood" val2 = "Request Instruction" val3="History" val4="Logout"/><br/>
+            <DashNavPat icon = "fas fa-user" val1="Home" val2 = "Request" val3="Instruction" val4="Logout"/><br/>
             <h1 className="mainHeading">Request Instruction</h1><br/><br/><hr></hr>
             <div className = "Banner">
             <img src = {Banner_3} alt = "Banner_3" id="img"></img>

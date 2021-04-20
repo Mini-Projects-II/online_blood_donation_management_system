@@ -4,6 +4,7 @@ import {useState} from  'react'
 import backImage from '../Components/backgroundCSSForSeprateDiv'
 import './../CSS/SignupPage.css'
 import DashBoardNav from './../Components/DashBoardNav';
+import DashNavPat from '../Components/DashNavPat';
 import {useHistory} from 'react-router-dom';
 export default function PatientRequestForm() {
     const history = useHistory();
@@ -56,6 +57,7 @@ export default function PatientRequestForm() {
 
     return (
         <>
+                    <DashNavPat icon = "fas fa-user" val1="Home" val2 = "Request" val3="Instruction" val4="Logout"/><br/>
             <div style = {backImage}></div>
             <div className="base-container">
                 <div className="signup-header">
