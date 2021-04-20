@@ -46,7 +46,7 @@ export default function DonorRequests() {
 
     return (
             <>
-                <DashNavHos  icon = "fas fa-hospital" user="City Hospital" val1="Blood Stock" val2 = "Donation Requests" val3="Blood Requests" val4="Logout"/>
+                <DashNavHos  icon = "fas fa-hospital" user="City Hospital" val1="Home" val2 = "Donation Requests" val3="Blood Requests" val4="Logout"/>
                 <h1 className ="p_hading">Donor Requests</h1>
                 <div className="p_request">
                    {
