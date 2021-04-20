@@ -38,6 +38,10 @@ const patientreqSchema = new mongoose.Schema({
     HA:{
         type:"String",
         default:"Mathura, UttarPradesh"
+    },
+    Room:{
+        type:String,
+        default:"206"
     }
 
 
