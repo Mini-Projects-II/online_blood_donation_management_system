@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import DashNavHos from './../Components/DashNavHos'
 import Banner from './../image/hospital.jpg'
-import './../CSS/HospitalDashBoard.css'
+import './../CSS/HospitalDashboard.css'
 import {useState} from 'react';
 
 
