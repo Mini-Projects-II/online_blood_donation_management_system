@@ -334,6 +334,13 @@ app.post("/cancelp",async (req,res)=>{
   }
 })
 
+app.get("/patientrequests",async(req,res)=>{
+  const requests = Patientreqmodel.find()
+  .then((doc)=>{req.doc = doc;console.log(doc)})
+  .catch((error)=>console.log(error))
+  res.send(req.doc)
+})
+
 
 app.listen(port, ()=>{
     console.log("Listening to port 8000");
