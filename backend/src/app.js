@@ -381,6 +381,33 @@ app.post("/deletedonor",async (req,res)=>{
   }
 })
 
+app.post("/acceptdonor",async (req,res)=>{
+  const {uin}= req.body;
+  console.log(uin);
+  
+  try{      
+    const user = await Donorreqmodel.findOne({mobile_number:uin})
+    if(user){
+      await Donorreqmodel.updateMany({mobile_number:uin}, { $set: { status: 'Accepted' } });
+      return res.status(200).json({error:"Request Accepted please refresh the pasge"});
+
+
+    }
+    else{
+      return res.status(500).json({error:"user not found"});
+
+
+    }
+    
+    
+    
+
+  }
+  catch(e){
+    console.log("error");
+  }
+})
+
 app.listen(port, ()=>{
     console.log("Listening to port 8000");
 });

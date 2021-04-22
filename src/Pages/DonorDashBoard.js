@@ -31,6 +31,7 @@ export default function DonorDashBoard() {
             console.log(data1);
             setFormRecord(data1);
             
+            
 
         }catch(e){
             console.log(e);
@@ -39,6 +40,8 @@ export default function DonorDashBoard() {
     useEffect(() => {
         donordash();
     }, [])
+
+    
 
     const cancelRequest =async(e)=>{
         const {name,per_date,per_time,mobile_number1,gender,bloodgroup,status,HN,HA,Room} = formRecord

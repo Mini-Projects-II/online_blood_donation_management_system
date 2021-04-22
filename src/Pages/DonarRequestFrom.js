@@ -47,9 +47,10 @@ export default function DonarRequestFrom(props) {
             history.push("./../dashboard/donor");
         }
         else if(res.status != 500 ){
-            window.alert("Request added");
+            window.alert("Request added ");
             console.log("Request added");
             history.push("./../dashboard/donor");
+            window.location.reload(true);
         }
         }
     }
