@@ -53,7 +53,7 @@ export default function LoginAsDonor() {
             </div>
             <form  method="POST" onSubmit = {handleData}>
             <div className="login-container">
-                <label htmlFor="mobile_no">Mobile Number</label><br></br>
+                <label htmlFor="mobile_no">Mobile NO </label><br></br>
                 <input type="number" id="mobile_no" name="mobile_no"
                 maxLength = "10"
                 value = {newRecord.mobile_no}

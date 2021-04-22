@@ -36,11 +36,11 @@
     display: block;
     width: 80%;
     padding: 10px;
-    border-radius: 5px;
     outline: none;
+    border:none ;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    border: 2px solid #f0f0f0;
+    border-bottom: 2px solid red;
     margin: 2px auto;
 }
 .login-container input:focus{

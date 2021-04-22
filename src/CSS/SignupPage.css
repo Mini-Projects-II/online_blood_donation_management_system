@@ -30,10 +30,11 @@
 .signup-container input{
     width: 80%;
     padding: 10px;
-    border-radius: 5px;
     outline: none;
+    border: none;
+    border-bottom: 2px solid red;
     font-family: 'Courier New', Courier, monospace;
-    border: 2px solid #f0f0f0;
+ 
     margin: 0 0 0 50px;
 }
 

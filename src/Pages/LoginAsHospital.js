@@ -64,12 +64,12 @@ export default function LoginAsHospital() {
             </div>
             <form onSubmit = {handleData1}>
             <div className="login-container">
-                <label htmlFor="mobile_no">Mobile Number</label><br></br>
+                <label htmlFor="mobile_no">Hopital id</label><br></br>
                 <input type="number" id="mobile_no" name="mobile_no"
                 maxLength = "10"
                 value = {newRecord.mobile_no}
                 onChange ={handleInput}
-                placeholder="Enter Hospital Mobile Number"/><br></br><br></br>
+                placeholder="Enter Hospital id"/><br></br><br></br>
                 <label htmlFor="password">Password</label><br></br>
                 <input type="password" id="password" name="password"
                 value  ={newRecord.password}
