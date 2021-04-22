@@ -77,8 +77,7 @@ const {uin} = ui;
         </div>
         <div className = "r_status">
                 <p className = "p_status"> Status: {e.status}</p>
-                <button className = "p_button">Cancel Request</button>
-                <button className = "p_button1">Accept Request</button>
+               
         </div>
     </div>
     }
