@@ -7,6 +7,13 @@ import DashBoardNav from './../Components/DashBoardNav';
 import {useHistory} from 'react-router-dom';
 
 export default function DonarRequestFrom(props) {
+    var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = yyyy + '-' + mm + '-' + dd;
+
     const history = useHistory();
     const [newRecord, setNewRecord] = useState({name:"",per_date:"",per_time:"",mobile_number:"",gender:"null",bloodgroup:"null"}); 
     const [record, setRecord] = useState([]);
@@ -69,7 +76,7 @@ export default function DonarRequestFrom(props) {
                     <label htmlFor="name">Donor Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter Donor Name"  value = {newRecord.name} onChange={handleInput}/><br></br><br></br>
                     <label htmlFor="per_date">Enter Preferd Date</label><br></br>
-                    <input type="date" id="per_date" name="per_date" placeholder="Select preferd date" value = {newRecord.per_date} onChange={handleInput}/><br></br><br></br>
+                    <input min={today} type="date" id="per_date" name="per_date" placeholder="Select preferd date" value = {newRecord.per_date} onChange={handleInput}/><br></br><br></br>
                     <label htmlFor="per_time">Enter Preferd Time</label><br></br>
                     <input type="time" id="per_time" name="per_time" placeholder="Enter your preferd time" value = {newRecord.per_time} onChange={handleInput}/><br></br><br></br>
                     <label htmlFor="mobile_number">Mobile Number</label><br></br>
