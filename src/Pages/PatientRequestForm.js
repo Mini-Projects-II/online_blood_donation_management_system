@@ -50,6 +50,7 @@ export default function PatientRequestForm() {
             window.alert("Request added");
             history.push("./../dashboard/patient");
             console.log("Registration Successful");
+            window.location.reload(true);
         }
         }
     }

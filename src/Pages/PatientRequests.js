@@ -23,9 +23,7 @@ export default function PatientRequests() {
     useEffect( () =>{
         getPatientRequests();
     },[])
-    console.log(parray);
-    console.log(parray[0].status);
-
+   
     const printreq = (e) =>{
         return <div className = "req">
         <div className = "r_details">

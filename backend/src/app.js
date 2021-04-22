@@ -348,6 +348,38 @@ app.get("/donorrequests",async(req,res)=>{
   res.send(req.doc);
 })
 
+app.post("/deletedonor",async (req,res)=>{
+  const {din}= req.body;
+  console.log(din);
+  
+  try{      
+    const user = await Donorreqmodel.findOne({mobile_number:din})
+    if(user){
+       await Donorreqmodel.deleteOne({mobile_number:din}, function(err){
+        if(err){
+          console.log(err)
+        }
+        
+  
+      });
+      return res.status(200).json({error:"Request Deleted please refresh the pasge"});
+
+
+    }
+    else{
+      return res.status(500).json({error:"user not found"});
+
+
+    }
+    
+    
+    
+
+  }
+  catch(e){
+    console.log("error");
+  }
+})
 
 app.listen(port, ()=>{
     console.log("Listening to port 8000");
