@@ -105,6 +105,7 @@ export default function PatientRequestForm() {
                 </div>
                 <button type="submit" id="submit">Request</button>
                 </form>
+                <p className="info-d">Note: Your Registeration and Request Mobile Number Must be same</p>
             </div>
         </>
     )

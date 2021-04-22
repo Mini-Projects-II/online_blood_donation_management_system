@@ -110,6 +110,20 @@
    
 
 }
+.p_button3{
+    background-color: red;
+    color: white;
+    border-radius:5px ;
+    padding: 10px;
+    border: none;
+    outline: none;
+   position:absolute;
+   left:700px;
+   margin-top: 7px;
+    
+    font-weight: bold;
+
+}
 
 
 .p_button:hover{

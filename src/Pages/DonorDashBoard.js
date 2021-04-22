@@ -79,7 +79,7 @@ export default function DonorDashBoard() {
                         </div>
                         <div className = "r_status">
                             <p className = "p_status"> Status: {formRecord.status}</p>
-                            <button className = "p_button" onClick={cancelRequest}>Remove and add New Request</button>
+                            <button className = "p_button3" onClick={cancelRequest}>Remove and add New Request</button>
                         </div>
 
                     </div>

@@ -51,7 +51,7 @@
 #submit{
     width: 30%;
     padding: 10px;
-    background-color: rgb(243, 178, 178);
+    background-color: rgb(240, 71, 71);
     border-radius: 5px ;
     color: white;
     font-weight: bolder;
@@ -60,6 +60,6 @@
 }
 #submit:hover{
     background-color: #f0f0f0;
-    color:red;
+    color:rgb(226, 100, 100);
 }
 
