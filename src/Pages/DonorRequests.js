@@ -94,9 +94,9 @@ const {uin} = ui;
                 <h1 className ="p_hading">Donor Requests</h1>
                 <h2 className = "p_hading2"> Accept or Reject Requests </h2>
                 <p className = "info-d">Please Enter Donor Mobile Number to Remove or Accept Request</p>
-                <input type = "number" value={di.din} name="di" className="diInput" onChange={(e) =>setDi({din:e.target.value})}/>
+                <input placeholder="Donor Mobile No" type = "number" value={di.din} name="di" className="diInput" onChange={(e) =>setDi({din:e.target.value})}/>
                 <button className = "p_button" onClick={deleteDonorReq}>Remove Request</button>
-                <input type = "number" value={ui.uin} name="ui" className="uiInput" onChange={(e) =>setUi({uin:e.target.value})}/>
+                <input placeholder="Donor Mobile No"type = "number" value={ui.uin} name="ui" className="uiInput" onChange={(e) =>setUi({uin:e.target.value})}/>
                 <button className = "p_button1" onClick={acceptDonorReq}>Accept Request</button>
 
 

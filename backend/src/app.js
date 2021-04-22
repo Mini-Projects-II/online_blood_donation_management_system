@@ -380,6 +380,38 @@ app.post("/deletedonor",async (req,res)=>{
     console.log("error");
   }
 })
+app.post("/deletepatient",async (req,res)=>{
+  const {din}= req.body;
+  console.log(din);
+  
+  try{      
+    const user = await Patientreqmodel.findOne({mobile_number:din})
+    if(user){
+       await Patientreqmodel.deleteOne({mobile_number:din}, function(err){
+        if(err){
+          console.log(err)
+        }
+        
+  
+      });
+      return res.status(200).json({error:"Request Deleted please refresh the pasge"});
+
+
+    }
+    else{
+      return res.status(500).json({error:"user not found"});
+
+
+    }
+    
+    
+    
+
+  }
+  catch(e){
+    console.log("error");
+  }
+})
 
 app.post("/acceptdonor",async (req,res)=>{
   const {uin}= req.body;
@@ -407,6 +439,34 @@ app.post("/acceptdonor",async (req,res)=>{
     console.log("error");
   }
 })
+
+app.post("/acceptpatient",async (req,res)=>{
+  const {uin}= req.body;
+  console.log(uin);
+  
+  try{      
+    const user = await Patientreqmodel.findOne({mobile_number:uin})
+    if(user){
+      await Patientreqmodel.updateMany({mobile_number:uin}, { $set: { status: 'Accepted' } });
+      return res.status(200).json({error:"Request Accepted please refresh the pasge"});
+
+
+    }
+    else{
+      return res.status(500).json({error:"user not found"});
+
+
+    }
+    
+    
+    
+
+  }
+  catch(e){
+    console.log("error");
+  }
+})
+
 
 app.listen(port, ()=>{
     console.log("Listening to port 8000");
