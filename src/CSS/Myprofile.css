@@ -1,0 +1,30 @@
+.myprofile{
+    margin-top:100px;
+    position: absolute;
+    top:10%;
+    left:27%;
+    width:800px
+   
+}
+.myp{
+    font-size: 25px;
+    margin-bottom: 15px;
+    color:rgb(233, 233, 248);
+    margin-left: 100px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+.mys{
+    background-color: rgb(97, 22, 235);
+    border-radius: 10px;
+    padding: 20px 0px;
+    width:660px;    
+}
+#icon{
+    background-color: black;
+    color:rgb(9, 245, 21);
+    font-size:  60px;
+    padding: 20px 90px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
