@@ -65,7 +65,7 @@ export default function DonorDashBoard() {
 
     return (
             <>
-                <DashBoardNav  icon = "fas fa-user" user={donordata.name} val1 ="Home" val2="Add Donation Request" val3 = "Instructions"  val4="Logout"/>
+                <DashBoardNav  icon = "fas fa-user" user={donordata.name} val1 ="Home" val2="Add Donation Request" val3 = "Instructions" val5="My Profile"  val4="Logout"/>
                 <h1 className ="p_hading">Your Requests</h1>
                 <div className="p_request">
                 <div className = "req">

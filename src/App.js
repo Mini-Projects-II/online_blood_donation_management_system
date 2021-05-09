@@ -20,6 +20,7 @@ import RequestInstruction from './Pages/RequestInstructions';
 import PatientRequests from './Pages/PatientRequests';
 import DonorRequests from './Pages/DonorRequests';
 import Myprofile from './Pages/Myprofile';
+import Myprofile1 from './Pages/Myprofile1';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route exact path='/hosp/drequests' component={DonorRequests}/>
         <Route exact path='/hosp/prequests' component={PatientRequests}/>
         <Route exact path= '/myprofile' component = {Myprofile}/>
+        <Route exact path= '/myprofile1' component = {Myprofile1}/>
         <Route component = {Error404}/>
       </Switch>
     </div>
