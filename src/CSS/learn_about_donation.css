@@ -4,6 +4,7 @@
     position: absolute;
     top:600px;
     overflow: hidden;
+    background-color: rgb(126, 111, 255);
 }
 
 .learn_about_donation h1{
@@ -20,6 +21,7 @@
 
 img{
     width: 100%;
+    
 }
 
 .table{

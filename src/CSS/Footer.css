@@ -36,7 +36,7 @@
     font-weight: bold;
     width:400px;
     display: inline-block;
-    margin: 20px;
+    margin: 20px 100px;
     text-align: left;
     margin-right: 900px ;
 }
@@ -50,5 +50,5 @@ h2{
     font-weight: bold;
     position: absolute;
     top:1300px;
-    left:650px;
+    left:950px;
 }
