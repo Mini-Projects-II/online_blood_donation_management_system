@@ -35,7 +35,7 @@ import DashBoardNav from './../Components/DashBoardNav'
         <DashBoardNav icon = "fas fa-user" user= {donordata.name}  val1="Home" val2 = "Request" val3="Instructions" val4="Logout" val5 ="My Profile"/>
         
         <div className="myprofile">
-        <i  id="icon" class="fas fa-user">Patient Profile</i>
+        <i  id="icon" class="fas fa-user">Donor Profile</i>
         <div className="mys">
             <p className="myp"> <span style={{color:"rgb(9, 245, 21)", fontWeight:"bold"}}>Name:</span>{donordata.name}</p>
             <p className="myp"> <span style={{color:"rgb(9, 245, 21)", fontWeight:"bold"}}>Parent's Name:</span>{donordata.parents_name}</p>
