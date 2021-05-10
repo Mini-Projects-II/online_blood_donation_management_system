@@ -21,7 +21,7 @@ export default function ContactUs() {
       <input type="text" id="name" name="name" placeholder="Organization Name"  required></input>
       <label for="msg">Query Details</label>
       <textarea type="text" id="msg" name="entry" rows="8" cols="50" placeholder="Write Your Message here..." required></textarea>
-      <button type="submit" id="button" name="submit-btn">Submit</button>          
+      <a id="button" href="mailto:ramballabh.agrawal_cs18@gla.ac.in">Submit</a>          
       </form>
       </div>
     </div>
